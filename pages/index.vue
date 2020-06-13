@@ -3,10 +3,14 @@
     <hero />
     <section class="section">
       <div class="container">
-        <h1 class="title">Featured Courses</h1>
+        <h1 class="title">Featured Projects</h1>
         <div class="columns">
-          <div class="column is-one-quarter">
-            <course-card />
+          <div 
+            v-for="course in courses" 
+            :key="course._id" 
+            class="column is-one-quarter"
+          >
+            <course-card :course="course"/>
           </div>
         </div>
       </div>
@@ -26,11 +30,20 @@
 
 <script>
 import CourseCard from '~/components/CourseCard'
-import BlogCard from '~/components/CourseCard'
+import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'
+import { mapState } from 'vuex'
 export default {
   components: {
     CourseCard, BlogCard, Hero
+  },
+  computed: {
+    ...mapState({
+      courses: state => state.course.items
+    })
+  },
+  async fetch({store}) {
+    await store.dispatch('course/fetchCourses')
   }
 }
 </script>
