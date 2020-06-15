@@ -1,12 +1,11 @@
 <template>
   <nav class="navbar is-active" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nuxt-link class="navbar-item" to="/">
+      <nav-link class="navbar-item" to="/">
         <h1 class="brand-title">Nico Tukiainen</h1>
-      </nuxt-link>
-      <!-- Adds click to open -->
-      <!-- Adds active class -->
-      <a @click="() => {}"
+      </nav-link>      
+      <a @click="isActive = !isActive"
+         :class="{'is-active': isActive}"
          role="button"
          class="navbar-burger burger"
          aria-label="menu"
@@ -18,25 +17,25 @@
       </a>
     </div>
 
-    <!-- Adds active class -->
-    <div id="navbarBasicExample"
+    <div :class="{'is-active': isActive}"
+         id="navbarBasicExample"
          class="navbar-menu">
       <div class="navbar-start">
-        <nuxt-link to="/" class="navbar-item">
+        <nav-link to="/" class="navbar-item">
           Home
-        </nuxt-link>
-        <nuxt-link to="#" class="navbar-item">
+        </nav-link>
+        <nav-link to="/about" class="navbar-item">
           About
-        </nuxt-link>
-        <nuxt-link to="#" class="navbar-item">
+        </nav-link>
+        <nav-link to="/projects" class="navbar-item">
           Projects
-        </nuxt-link>
-        <nuxt-link to="/blogs" class="navbar-item">
+        </nav-link>
+        <nav-link to="/blogs" class="navbar-item">
           Blog
-        </nuxt-link>
-        <nuxt-link to="#" class="navbar-item">
+        </nav-link>
+        <nav-link to="/contact" class="navbar-item">
           Contact
-        </nuxt-link>
+        </nav-link>
       </div>
 
       <div class="navbar-end">
@@ -61,12 +60,12 @@
               </a>
             </template>
             <template v-else>
-              <nuxt-link to="/register" class="button is-primary">
+              <nav-link to="/register" class="button is-primary">
                 Sign up
-              </nuxt-link>
-              <nuxt-link to="/login" class="button is-light">
+              </nav-link>
+              <nav-link to="/login" class="button is-light">
                 Log in
-              </nuxt-link>
+              </nav-link>
             </template>
           </div>
         </div>
@@ -77,6 +76,11 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+      isActive: false
+    }
+  },
   computed: {
     ...mapGetters({
       'user': 'auth/authUser',

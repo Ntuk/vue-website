@@ -39,7 +39,7 @@
             </textarea> -->
           <project-editor 
             :initialContent="project.description"
-            @editorUpdated="(content) => emitCourseValue(content, 'description')"
+            @editorUpdated="(content) => emitProjectValue(content, 'description')"
           />
           </div>
         </div>
