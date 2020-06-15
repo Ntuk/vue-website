@@ -23,7 +23,17 @@
             </div>
             <!-- end of blog -->
             <!-- pagination -->
-            <div class="section">
+            <div v-if="pagination.pageCount && pagination.pageCount > 1" class="section">
+              <no-ssr placeholder="Loading...">
+                <paginate
+                  v-model="currentPage"
+                  :page-count="pagination.pageCount"
+                  :click-handler="fetchBlogs"
+                  :prev-text="'Prev'"
+                  :next-text="'Next'"
+                  :container-class="'paginationContainer'">
+                </paginate>
+              </no-ssr>
             </div>
             <!-- end of pagination -->
           </div>
@@ -61,11 +71,47 @@ export default {
   computed: {
     ...mapState({
       publishedBlogs: state => state.blog.items.all,
-      featuredBlogs: state => state.blog.items.featured,    })
+      featuredBlogs: state => state.blog.items.featured,    
+      pagination: state => state.blog.pagination
+    }),
+    currentPage: {
+      get() {
+        return this.$store.state.blog.pagination.pageNum
+      },
+      set(value) {
+        this.$store.commit('blog/setPage', value)
+      }
+    }
   },
-  async fetch({store}) {
-    await store.dispatch('blog/fetchBlogs')
+  async fetch({store, query}) {
+    // Try to get values from query
+    const filter = {}
+    const {pageNum, pageSize} = query
+    if (pageNum && pageSize) {
+      filter.pageNum =  parseInt(pageNum, 10)
+      filter.pageSize = parseInt(pageSize, 10)
+      store.commit('blog/setPage', filter.pageNum)
+    } else {
+      // TODO: Maybe getters ?
+      filter.pageNum = store.state.blog.pagination.pageNum
+      filter.pageSize = store.state.blog.pagination.pageSize
+    }
+    await store.dispatch('blog/fetchBlogs', filter)
     await store.dispatch('blog/fetchFeaturedBlogs', {'filter[featured]': true})
+  },
+  methods: {
+    setQueryPaginationParams() {
+      const { pageSize, pageNum } = this.pagination
+      this.$router.push({query: {pageNum, pageSize}})
+    },
+    fetchBlogs() {
+      const filter = {}
+      filter.pageSize = this.pagination.pageSize
+      filter.pageNum = this.pagination.pageNum
+      // Here store the query params!
+      this.$store.dispatch('blog/fetchBlogs', filter)
+        .then(_ => this.setQueryPaginationParams())
+    }
   }
 }
 </script>

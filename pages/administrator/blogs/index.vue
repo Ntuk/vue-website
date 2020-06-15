@@ -127,7 +127,7 @@ export default {
       }
     },
     updateBlog(blog) {
-    this.$store.dispatch('instructor/blog/updatePublishedBlog')
+    this.$store.dispatch('administrator/blog/updatePublishedBlog')
       const featured = !blog.featured
       const featureStatus = featured ? 'Featured' : 'Un-Featured'
       this.$store.dispatch('administrator/blog/updatePublishedBlog', {id: blog._id, data: {featured}})
