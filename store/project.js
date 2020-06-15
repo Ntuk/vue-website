@@ -5,10 +5,10 @@ export const state = () => ({
 })
 
 export const actions = {
-  fetchCourses({commit}) {
+  fetchProjects({commit}) {
     return this.$axios.$get('/api/v1/products')
-      .then(courses => {
-        commit('setItems', {resource: 'course', items: courses}, {root: true})
+      .then(projects => {
+        commit('setItems', {resource: 'project', items: projects}, {root: true})
         return state.items
     })
   }

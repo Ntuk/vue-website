@@ -53,8 +53,8 @@
               <!-- If Admin -->
               <button
                  v-if="isAdmin" class="button is-link is-outlined"
-                 @click="() => {}">
-                Instructor
+                 @click="() => $router.push('/administrator')">
+                Administrator
               </button>
               <a class="button is-primary" @click="logout">
                 Logout

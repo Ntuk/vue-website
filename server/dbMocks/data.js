@@ -73,7 +73,7 @@ module.exports = {
         "slug": 'Dart-and-Flutter-From-Zero-to-Hero-Practical-Dev-Bootcamp',
         "title": "Dart and Flutter From Zero to Hero - Practical Dev Bootcamp",
         "subtitle": "Build real mobile Application for Android and iOS. Learn Dart Framework and discover amazing features of Flutter.",
-        "image": "https://i.udemycdn.com/course/750x422/2381802_d90c_3.jpg",
+        "image": "https://i.udemycdn.com/project/750x422/2381802_d90c_3.jpg",
         "description": "After dart introduction, we will start learning Flutter Framework. I will explain the basics of flutter, what widgets are, why you need widgets and how they work. We will start with simple examples which will later grow into complex components of our application. I will introduce different architectural patterns on how to manage a state of our application. We will always follow best practices introduced by the Google Flutter team.",
         "wsl": [
           {

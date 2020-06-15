@@ -6,11 +6,11 @@
         <h1 class="title">Featured Projects</h1>
         <div class="columns">
           <div 
-            v-for="course in courses" 
-            :key="course._id" 
+            v-for="project in projects" 
+            :key="project._id" 
             class="column is-one-quarter"
           >
-            <course-card :course="course"/>
+            <project-card :project="project"/>
           </div>
         </div>
       </div>
@@ -29,21 +29,21 @@
 </template>
 
 <script>
-import CourseCard from '~/components/CourseCard'
+import ProjectCard from '~/components/ProjectCard'
 import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'
 import { mapState } from 'vuex'
 export default {
   components: {
-    CourseCard, BlogCard, Hero
+    ProjectCard, BlogCard, Hero
   },
   computed: {
     ...mapState({
-      courses: state => state.course.items
+      projects: state => state.project.items
     })
   },
   async fetch({store}) {
-    await store.dispatch('course/fetchCourses')
+    await store.dispatch('project/fetchProjects')
   }
 }
 </script>

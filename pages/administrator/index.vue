@@ -1,20 +1,24 @@
 <template>
-  <div class="instructor-page">
+  <div class="administrator-page">
+    <administrator-header 
+      title="Choose a page to admin"
+      exitLink="/"
+    />
     <div class="centered">
       <div class="columns">
-        <!-- Go to /instructor/courses -->
-        <div class="box" @click="() => {}">
+        <!-- Go to /administrator/projects -->
+        <div class="box" @click="() => $router.push('/administrator/projects')">
           <div>
             Projects
           </div>
         </div>
-        <!-- Go to /instructor/blogs -->
+        <!-- Go to /administrator/blogs -->
         <div class="box" @click="() => {}">
           <div>
             Blogs
           </div>
         </div>
-        <!-- Go to /instructor/heroes -->
+        <!-- Go to /administrator/heroes -->
         <div class="box" @click="() => {}">
           <div>
             Heroes
@@ -25,12 +29,16 @@
   </div>
 </template>
 <script>
+import AdministratorHeader from '~/components/shared/Header'
 export default {
-  middleware: 'admin'
+  layout: 'administrator',
+  components: {
+    AdministratorHeader
+  }
 }
 </script>
 <style scoped lang="scss">
-  .instructor-page {
+  .administrator-page {
     .centered {
       margin-top: 100px;
       display: flex;

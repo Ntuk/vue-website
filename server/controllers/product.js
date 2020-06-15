@@ -16,7 +16,7 @@ exports.getProducts = function (req, res) {
     })
 }
 
-exports.getInstructorProducts = function (req, res) {
+exports.getAdministratorProducts = function (req, res) {
   const userId = req.user.id;
 
   Product
