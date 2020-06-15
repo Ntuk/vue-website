@@ -30,13 +30,17 @@
         <div class="field">
           <label class="label">Project description</label>
           <div class="control">
-            <textarea
+            <!-- <textarea
               :value="project.description"
               @input="($event) => emitProjectValue($event, 'description')"
               class="textarea is-medium"
               type="text"
               placeholder="Write something catchy about the project">
-            </textarea>
+            </textarea> -->
+          <project-editor 
+            :initialContent="project.description"
+            @editorUpdated="(content) => emitCourseValue(content, 'description')"
+          />
           </div>
         </div>
         <div class="field">
@@ -103,7 +107,11 @@
   </div>
 </template>
 <script>
+import ProjectEditor from '~/components/editor/ProjectEditor'
 export default {
+  components: {
+    ProjectEditor
+  },
   props: {
     project: {
       type: Object,
@@ -117,7 +125,7 @@ export default {
   },
   methods: {
     emitProjectValue(e, field) {
-      const value = e.target.value
+      const value = e.target ? e.target.value : e 
       if (field === 'category') {
         return this.emitCategory(value, field)
       }
