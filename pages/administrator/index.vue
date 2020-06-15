@@ -13,7 +13,7 @@
           </div>
         </div>
         <!-- Go to /administrator/blogs -->
-        <div class="box" @click="() => {}">
+        <div class="box" @click="() => $router.push('/administrator/blogs')">
           <div>
             Blogs
           </div>

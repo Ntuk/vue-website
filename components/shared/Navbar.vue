@@ -31,7 +31,7 @@
         <nuxt-link to="#" class="navbar-item">
           Projects
         </nuxt-link>
-        <nuxt-link to="#" class="navbar-item">
+        <nuxt-link to="/blogs" class="navbar-item">
           Blog
         </nuxt-link>
         <nuxt-link to="#" class="navbar-item">
