@@ -7,19 +7,19 @@
     <div class="centered">
       <div class="columns">
         <!-- Go to /administrator/projects -->
-        <div class="box" @click="() => $router.push('/administrator/projects')">
+        <div class="box" @click="$router.push('/administrator/projects')">
           <div>
             Projects
           </div>
         </div>
         <!-- Go to /administrator/blogs -->
-        <div class="box" @click="() => $router.push('/administrator/blogs')">
+        <div class="box" @click="$router.push('/administrator/blogs')">
           <div>
             Blogs
           </div>
         </div>
         <!-- Go to /administrator/heroes -->
-        <div class="box" @click="() => {}">
+        <div class="box" @click="$router.push('/administrator/heroes')">
           <div>
             Heroes
           </div>

@@ -20,15 +20,8 @@ exports.initSessionStore = function() {
   return store;
 }
 
-// exports.connect = function() {
-//   return mongoose.connect(keys.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => console.log('DB Connected!'))
-//     .catch(err => console.log(err));
-// }
-
-
 exports.connect = function() {    
-  return mongoose.connect(keys.DB_URI, { useNewUrlParser: true })      
+  return mongoose.connect(keys.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })      
     .then(() => console.log('DB Connected!'))      
     .catch(err => console.log(err));  
 }
