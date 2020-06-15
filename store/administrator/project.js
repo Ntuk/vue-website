@@ -2,7 +2,8 @@
 
 export const state = () => ({
   items: [],
-  item: {}
+  item: {},
+  canUpdateProject: false
 })
 
 export const actions = {
@@ -25,9 +26,25 @@ export const actions = {
     return this.$axios.$post('/api/v1/products', projectData)
       .then(_ => this.$router.push('/administrator/projects'))
   },
+  updateProject({state, commit}) {
+    const project = state.item
+    return this.$axios.$patch(`/api/v1/products/${project._id}`, project)
+      .then(project => {
+        commit('setProject', project)
+        commit('setCanUpdateProject', false)
+        return state.item
+      })
+      .catch(error => Promise.reject(error))
+  },
+  // TODO: cache previous value and verify if you can update project
+  // TODO: set canUpdate only when project values has beed updated
   updateLine({commit}, {index, value, field}) {
     commit('setLineValue', {index, value, field})
-    // Surprise commit for next lectures (:
+    commit('setCanUpdateProject', true)
+  },
+  updateProjectValue({commit}, {value, field}) {
+    commit('setProjectValue', {value, field})
+    commit('setCanUpdateProject', true)
   }
 }
 
@@ -38,6 +55,12 @@ export const mutations = {
   },
   setProject(state, project) {
     state.item = project
+  },
+  setProjectValue(state, {value, field}) {
+    state.item[field] = value
+  },
+  setCanUpdateProject(state, canUpdate) {
+    state.canUpdateProject = canUpdate
   },
   addLine(state, field) {
     state.item[field].push({value: ''})

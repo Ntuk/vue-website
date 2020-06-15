@@ -9,6 +9,8 @@
           <label class="label">Project title</label>
           <div class="control">
             <input
+              :value="project.title"
+              @input="($event) => emitProjectValue($event, 'title')"
               class="input is-medium"
               type="text"
               placeholder="Dart and Flutter From Zero to Hero ">
@@ -18,6 +20,8 @@
           <label class="label">Project subtitle</label>
           <div class="control">
             <input
+              :value="project.subtitle"
+              @input="($event) => emitProjectValue($event, 'subtitle')"
               class="input is-medium"
               type="text"
               placeholder="Build real mobile Application for Android and iOS.">
@@ -27,6 +31,8 @@
           <label class="label">Project description</label>
           <div class="control">
             <textarea
+              :value="project.description"
+              @input="($event) => emitProjectValue($event, 'description')"
               class="textarea is-medium"
               type="text"
               placeholder="Write something catchy about the project">
@@ -36,9 +42,16 @@
         <div class="field">
           <label class="label">Category</label>
           <div class="select is-medium">
-            <select>
-              <option value="default">Select Category</option>
-              <!-- <option> </option> -->
+            <select
+              :value="project.category._id"
+              @change="($event) => emitProjectValue($event, 'category')"
+            >
+              <option
+                v-for="category in categories"
+                :key="category._id"
+                :value="category._id">
+                {{category.name}}
+             </option>
             </select>
           </div>
         </div>
@@ -48,12 +61,14 @@
             <div class="column">
               <figure class="image is-4by2">
                 <img
-                  :src="''">
+                 :src="project.image">
               </figure>
             </div>
             <div class="column centered">
               <div class="control">
                 <input
+                  :value="project.image"
+                  @input="($event) => emitProjectValue($event, 'image')"
                   class="input is-medium"
                   type="text"
                   placeholder="https://images.unsplash.com/photo-1498837167922-ddd27525d352">
@@ -65,6 +80,8 @@
           <label class="label">Project Link</label>
           <div class="control">
             <input
+              :value="project.productLink"
+              @input="($event) => emitProjectValue($event, 'productLink')"
               class="input is-medium"
               type="text"
               placeholder="https://www.udemy.com/vue-js-2-the-full-guide-by-real-apps-vuex-router-node">
@@ -74,6 +91,8 @@
           <label class="label">Project Video Link</label>
           <div class="control">
             <input
+              :value="project.promoVideoLink"
+              @input="($event) => emitProjectValue($event, 'promoVideoLink')"
               class="input is-medium"
               type="text"
               placeholder="https://www.youtube.com/watch?v=WQ9sCAhRh1M">
@@ -83,3 +102,31 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    categories() {
+      return this.$store.state.category.items
+    }
+  },
+  methods: {
+    emitProjectValue(e, field) {
+      const value = e.target.value
+      if (field === 'category') {
+        return this.emitCategory(value, field)
+      }
+      return this.$emit('projectValueUpdated', {value, field})
+    },
+    emitCategory(categoryId, field) {
+      const foundCategory = this.categories.find(c => c._id === categoryId)
+      this.$emit('projectValueUpdated', {value: foundCategory, field})
+    }
+  }
+}
+</script>

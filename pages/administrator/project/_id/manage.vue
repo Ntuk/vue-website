@@ -6,7 +6,8 @@
       <template #actionMenu>
         <div class="full-page-takeover-header-button">
           <button
-            @click="() => {}"
+            @click="updateProject"
+            :disabled="!canUpdateProject"
             class="button is-primary is-inverted is-medium is-outlined">
             Save
           </button>
@@ -54,6 +55,7 @@
           <div class="column">
             <keep-alive>
               <component
+                @projectValueUpdated="handleProjectUpdate"
                 :is="activeComponent"
                 :project="project"
               />
@@ -86,13 +88,25 @@ export default {
       steps: ['ProjectInfo', 'LandingPage', 'Status']
     }
   },
-  fetch({store, params}) {
-    return store.dispatch('administrator/project/fetchProjectById', params.id)
+  async fetch({store, params}) {
+    await store.dispatch('administrator/project/fetchProjectById', params.id)
+    await store.dispatch('category/fetchCategories')
   },
   computed: {
     ...mapState({
-      project: ({administrator}) => administrator.project.item
+      project: ({administrator}) => administrator.project.item,
+      canUpdateProject: ({administrator}) => administrator.project.canUpdateProject
     })
+  },
+  methods: {
+    updateProject() {
+      this.$store.dispatch('administrator/project/updateProject')
+        .then(_ => this.$toasted.success('Project has been succesfully updated!', {duration: 3000}))
+        .catch(error => this.$toasted.error('Project cannot be updated!'), {duration: 3000})
+    },
+    handleProjectUpdate({value, field}) {
+      this.$store.dispatch('administrator/project/updateProjectValue', {field, value})
+    }
   }
 }
 </script>
