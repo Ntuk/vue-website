@@ -1,14 +1,16 @@
 <template>
   <div>
     <navbar />
-    <nuxt />
+    <nuxt class="contents" />
+    <!-- <app-footer class="app-footer" /> -->
   </div>
 </template>
 <script>
-import Navbar from '~/components/shared/Navbar';
+import AppFooter from '~/components/shared/Footer'
+import Navbar from '~/components/shared/Navbar'
 export default {
   components: {
-    Navbar
+    Navbar, AppFooter
   }
 }
 </script>
@@ -24,7 +26,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  height: 100% !important;
 }
+/* body{
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.contents {
+  flex: 1 0 auto !important;
+}
+.app-footer {
+  align-self: flex-end !important;
+} */
 
 *,
 *:before,

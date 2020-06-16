@@ -17,7 +17,7 @@
           <div class="section">
             <div class="what-you-get">
               <div class="what-you-get-title">
-                What you will learn
+                Technologies used
               </div>
               <ul class="what-you-get-items">
                 <!-- TODO: Iterate project wsl -->
@@ -46,6 +46,14 @@
 import ProductHero from '~/components/ProductHero'
 import ProductHeroCard from '~/components/ProductHeroCard'
 export default {
+  head() {
+    return {
+      title: this.project.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.project.subtitle }
+      ]
+    }
+  },
   components: {
     ProductHero, ProductHeroCard
   },

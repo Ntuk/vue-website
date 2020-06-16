@@ -62,6 +62,12 @@ module.exports = {
       },{
         "_id": category2Id,
         "name": "Mobile Development"
+      },{
+        "_id": category3Id,
+        "name": "Game Development"
+      },{
+        "_id": category4Id,
+        "name": "Modeling"
       }
     ]
   },

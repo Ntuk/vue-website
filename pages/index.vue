@@ -15,7 +15,20 @@
             :key="project._id" 
             class="column is-one-quarter"
           >
-            <project-card :project="project"/>
+            <v-popover
+              offset="16"
+              trigger="hover"
+              placement="right-start">
+              <project-card :project="project"/>
+              <template slot="popover">
+                <project-card-tooltip
+                  :title="project.title"
+                  :subtitle="project.category.name"
+                  :description="project.subtitle"
+                  :wsl="project.wsl"
+                />
+              </template>
+            </v-popover>
           </div>
         </div>
       </div>
@@ -38,12 +51,16 @@
 
 <script>
 import ProjectCard from '~/components/ProjectCard'
+import ProjectCardTooltip from '~/components/ProjectCardTooltip'
 import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'
 import { mapState } from 'vuex'
 export default {
+  head: {
+    title: 'Portfolio and Blog | Nico Tukiainen'
+  },
   components: {
-    ProjectCard, BlogCard, Hero
+    ProjectCard, BlogCard, Hero, ProjectCardTooltip
   },
   computed: {
     ...mapState({

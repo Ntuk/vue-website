@@ -8,24 +8,16 @@
     <div class="card-content">
       <div class="content m-b-sm">
         <div class="media-content">
-          <span class="title is-2 main-price">${{price}}</span>
-          <span class="title is-2">${{discountedPrice}}</span>
         </div>
       </div>
-      <a
-        :href="navigateTo"
-        target="_"
-        class="button is-fullwidth is-large is-danger is-outlined m-b-sm">
-        Enroll on Udemy
-      </a>
-      <div class="content">
-        <div class="m-b-none project-features">Project Requirements</div>
+      <!-- <div class="content">
+        <div class="m-b-none project-features"></div>
         <ul class="m-t-none">
           <li v-for="req in requirements" :key="req.value">
             {{req.value}}
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -36,17 +28,9 @@ export default {
       type: Array,
       default: null
     },
-    price: {
-      type: Number,
-      default: null
-    },
     navigateTo: {
       type: String,
       default: ''
-    },
-    discountedPrice: {
-      type: Number,
-      required: true
     },
     image: {
       type: String,
@@ -70,11 +54,6 @@ export default {
     }
     .project-features {
       font-size: 17px;
-    }
-    .main-price {
-      font-size: 17px;
-      color: #7d7d7d;
-      text-decoration: line-through;
     }
   }
 </style>

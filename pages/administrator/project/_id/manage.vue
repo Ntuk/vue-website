@@ -70,9 +70,10 @@
               </p>
               <ul class="menu-list">
                 <li>
-                  <!-- display TargetStudents -->
+                  <!-- display ProjectInfo -->
                   <a @click.prevent="navigateTo(1)"
-                     :class="activeComponentClass(1)">Project Info
+                     :class="activeComponentClass(1)">
+                     Project Info
                   </a>
                 </li>
                 <li>

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-active" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nav-link class="navbar-item" to="/">
+      <nav-link class="navbar-item nico" to="/">
         <h1 class="brand-title">Nico Tukiainen</h1>
       </nav-link>      
       <a @click="isActive = !isActive"
@@ -97,14 +97,49 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .navbar-brand {
+    background-color: #34495e;
+  }
+  .navbar-menu {
+    background-image: linear-gradient(to right, #34495e , #2c3e50);
+    // border-bottom: 2px solid #f39c12;
+  }
   .brand-title {
     font-size: 35px;
     font-weight: bold;
   }
   .navbar-brand {
     padding-right: 30px;
+    // border-bottom: 2px solid #f39c12;
+
+    @media screen and (max-width: 1023px) {
+      padding-right: 0px;
+    }
+  }
+  .navbar-item {
+    color: #f39c12;
+      &:hover {
+        background-color: transparent;
+        color: #e67e22;
+      }
+  }
+  .navbar-item.is-active.nico {
+    border: 0 !important;
+    color: #f39c12 !important;
+    margin: 0 !important;
+  }
+  .navbar-item.is-active {
+    color: #e67e22;
+    font-weight: normal;
+    background-color: transparent;
+    // margin-top: 4px;
+  }
+  .burger {
+    color: #f39c12;
   }
   .avatar {
     margin-right: 5px;
   }
 </style>
+
+

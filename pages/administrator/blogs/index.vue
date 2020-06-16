@@ -127,11 +127,11 @@ export default {
       }
     },
     updateBlog(blog) {
-    this.$store.dispatch('administrator/blog/updatePublishedBlog')
       const featured = !blog.featured
       const featureStatus = featured ? 'Featured' : 'Un-Featured'
+
       this.$store.dispatch('administrator/blog/updatePublishedBlog', {id: blog._id, data: {featured}})
-      .then(_ => this.$toasted.success(`Blog has been ${featureStatus}!`, {duration: 2000}))
+        .then(_ => this.$toasted.success(`Blog has been ${featureStatus}!`, {duration: 2000}))
     },
     publishedOptions(isFeatured) {
       return createPublishedOptions(isFeatured)

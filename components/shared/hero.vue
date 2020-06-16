@@ -7,13 +7,16 @@
           :style="{ background : `url(${image}) no-repeat center center`}">
         </div>
         <div class="container">
+           <h1 class="hero-header">
+            Featured project
+          </h1>
           <h1 class="title">
             {{title}}
           </h1>
           <h2 class="subtitle">
             {{subtitle}}
           </h2>
-          <a target="_" :href="promoLink" class="button is-danger">Learn More!</a>
+          <!-- <a target="_" :href="promoLink" class="button is-danger">See more featured stuff</a> -->
         </div>
       </div>
     </section>  
@@ -44,6 +47,10 @@
   .hero-body {
     position: relative;
   }
+  .hero-header {
+    font-size: 35px;
+    font-weight: bold;
+  }
   .hero-img {
     opacity: 0.8;
     position: absolute;
@@ -63,12 +70,12 @@
     background-color: black;
   }
   .title {
-    font-weight: bold;
-    font-size: 45px;
+    // font-weight: bold;
+    font-size: 30px;
   }
   .subtitle {
     /*font-weight: bold;*/
-    font-size: 25px;
+    font-size: 16px;
   }
   .author-name {
     font-size: 20px;

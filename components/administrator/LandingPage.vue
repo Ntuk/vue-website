@@ -17,14 +17,14 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Project subtitle</label>
+          <label class="label">Date</label>
           <div class="control">
             <input
               :value="project.subtitle"
               @input="($event) => emitProjectValue($event, 'subtitle')"
               class="input is-medium"
               type="text"
-              placeholder="Build real mobile Application for Android and iOS.">
+              placeholder="OCTOBER 24, 2017">
           </div>
         </div>
         <div class="field">

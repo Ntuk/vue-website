@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-vue-website",
+  "name": "nico-tukiainen-vue-website",
   "version": "1.0.0",
-  "description": "My Nuxt.js project",
+  "description": "Nico Tukiainen's personal website. I am a Software Engineer and a developer but my other interests include 3d modeling, user experience, web design and good food.",
   "author": "Nico Tukiainen",
   "private": true,
   "scripts": {
