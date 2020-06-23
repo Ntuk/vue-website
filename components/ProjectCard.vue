@@ -16,7 +16,6 @@
       </div>
       <div class="content">
         {{project.subtitle | shortenText(45)}}
-        <br>
       </div>
     </div>
     <footer class="card-footer">

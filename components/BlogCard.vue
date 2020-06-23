@@ -13,6 +13,9 @@
         {{blog.subtitle}}
         <br>
       </div>
+      <div class="content">
+        {{blog.createdAt | formatDate}}
+      </div>
     </div>
     <footer class="card-footer">
       <nuxt-link :to="`/blogs/${blog.slug}`" class="card-footer-item link">Read the whole post</nuxt-link>
