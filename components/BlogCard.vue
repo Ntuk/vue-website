@@ -3,7 +3,9 @@
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{blog.title}}</p>
+          <nuxt-link :to="`/blogs/${blog.slug}`">
+            <p class="title is-4">{{blog.title}}</p>
+          </nuxt-link>
           <p class="subtitle is-6"><i>by {{blog.author.name}}</i></p>
         </div>
       </div>
@@ -13,7 +15,7 @@
       </div>
     </div>
     <footer class="card-footer">
-      <nuxt-link :to="`/blogs/${blog.slug}`" class="card-footer-item">Read More</nuxt-link>
+      <nuxt-link :to="`/blogs/${blog.slug}`" class="card-footer-item link">Read the whole post</nuxt-link>
     </footer>
   </div>
 </template>
@@ -32,5 +34,8 @@ export default {
   .card-image:hover {
     cursor: pointer;
     opacity: 0.9;
+  }
+  .link {
+    color: #e67e22;
   }
 </style>

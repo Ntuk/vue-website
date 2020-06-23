@@ -8,15 +8,18 @@
     />
     <section class="section">
       <div class="container">
-        <h1 class="title">Featured Projects</h1>
+        <div class="is-flexible">
+          <h1 class="title">Featured Projects</h1> 
+          <button @click="$router.push(`/projects/`)" class="button">See all projects</button>
+        </div>
         <div class="columns is-multiline">
-          <div 
-            v-for="project in projects" 
+          <div            
+            v-for="project in projects.slice(0, 4)"
             :key="project._id" 
             class="column is-one-quarter"
           >
             <v-popover
-              offset="16"
+              offset="0"
               trigger="hover"
               placement="right-start">
               <project-card :project="project"/>
@@ -35,7 +38,10 @@
     </section>
     <section class="section">
       <div class="container">
-        <h1 class="title">Featured Articles</h1>
+        <div class="is-flexible">
+          <h1 class="title">Featured Blogs</h1> 
+          <button @click="$router.push(`/blogs/`)" class="button">See all blogs</button>
+        </div>
         <div class="columns is-multiline">
           <div v-for="blog in featuredBlogs" :key="blog._id" class="column is-one-quarter">
             <blog-card
@@ -77,8 +83,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  // Home page
+  .is-flexible {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+
+    h1 {
+      width: 50%;
+    }
+    button {
+      width: 50%;
+      color: #e67e22;
+      background-color: #ecf0f1;
+
+      &:hover {
+        background-color: #f4f5f5;
+        border: 1px solid #e67e22;
+      }
+    }
+  }
   .links {
     padding-top: 15px;
+  }
+  .link {
+    color: #e67e22;
   }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div class="card">
-    <div class="card-image">
-      <figure class="image is-4by2">
-        <img :src="project.image" alt="Placeholder image">
-      </figure>
-    </div>
+    <nuxt-link :to="`/projects/${project.slug}`">
+      <div class="card-image">
+        <figure class="image is-4by2">
+          <img :src="project.image" alt="Placeholder image">
+        </figure>
+      </div>
+    </nuxt-link>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
@@ -16,13 +18,9 @@
         {{project.subtitle | shortenText(45)}}
         <br>
       </div>
-      <!-- <div class="price-box">
-        <span class="price">{{project.price}}</span>
-        <span class="disc-price">{{project.discountedPrice}}</span>
-      </div> -->
     </div>
     <footer class="card-footer">
-      <nuxt-link :to="`/projects/${project.slug}`" class="card-footer-item">Learn More</nuxt-link>
+      <nuxt-link :to="`/projects/${project.slug}`" class="card-footer-item link">More Information</nuxt-link>
     </footer>
   </div>
 </template>
@@ -39,20 +37,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card-image:hover {
-    cursor: pointer;
-    opacity: 0.9;
+  .card-image {
+    filter: grayscale(0);
+    transition: .3s ease-in-out;
+    
+    &:hover {
+      filter: grayscale(100%);
+    }
   }
-  // .price-box {
-  //   text-align: right;
-  //   .price {
-  //     color: gray;
-  //     font-size: 16px;
-  //     text-decoration: line-through;
-  //   }
-  //   .disc-price {
-  //     font-size: 21px;
-  //     font-weight: bold;
-  //   }
-  // }
+  .link {
+    color: #e67e22;
+  }
 </style>

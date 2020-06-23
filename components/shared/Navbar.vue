@@ -60,10 +60,10 @@
               </a>
             </template>
             <template v-else>
-              <nav-link to="/register" class="button is-primary">
+              <nav-link to="/register" class="button is-primary" id="no-nav-decos">
                 Sign up
               </nav-link>
-              <nav-link to="/login" class="button is-light">
+              <nav-link to="/login" class="button is-light" id="no-nav-decos">
                 Log in
               </nav-link>
             </template>
@@ -102,7 +102,6 @@ export default {
   }
   .navbar-menu {
     background-image: linear-gradient(to right, #34495e , #2c3e50);
-    // border-bottom: 2px solid #f39c12;
   }
   .brand-title {
     font-size: 35px;
@@ -110,7 +109,6 @@ export default {
   }
   .navbar-brand {
     padding-right: 30px;
-    // border-bottom: 2px solid #f39c12;
 
     @media screen and (max-width: 1023px) {
       padding-right: 0px;
@@ -132,13 +130,17 @@ export default {
     color: #e67e22;
     font-weight: normal;
     background-color: transparent;
-    // margin-top: 4px;
   }
   .burger {
     color: #f39c12;
   }
   .avatar {
     margin-right: 5px;
+  }
+  #no-nav-decos {    
+    &:after, &:before {
+      content: none;
+    }
   }
 </style>
 

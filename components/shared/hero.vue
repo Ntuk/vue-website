@@ -8,7 +8,7 @@
         </div>
         <div class="container">
            <h1 class="hero-header">
-             Web Developer
+             <TypeEffect />
           </h1>
           <h1 class="title">
             {{title}}
@@ -22,9 +22,10 @@
     </section>  
 </template>
 <script>
-
+import TypeEffect from './TypeEffect.vue'
   export default {
     components: {
+      TypeEffect
     },
     props: {
       title: {

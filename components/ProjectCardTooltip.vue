@@ -49,6 +49,8 @@ export default {
       .wsl-item {
         font-size: 13px;
       }
-    }
+    }    
+  box-shadow: 0 8px 12px 0 rgba(24, 60, 52, 0.2), 0 0 1px 0 rgba(24, 60, 52, 0.2);
+  border: 3px solid #f39c12;
   }
 </style>

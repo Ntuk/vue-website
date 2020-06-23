@@ -40,39 +40,41 @@ export default {
       text-decoration: none;
       padding-bottom: 8px;
 
-      &:before,
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 1px;
-            left: 0; right: 0;
-            height: 2px;
-            background-color: $red;
-        }
-        &:before {
-            opacity: 0;
-            transform: translateY(- $distance);
-            transition: transform 0s $easeOutBack, opacity 0s;
-        }
-        &:after {
-            opacity: 0;
-            transform: translateY($distance/2);
-            transition: transform $duration $easeOutBack, opacity $duration;
-        }
-        &:hover,
-        &:focus {
-            &:before,
-            &:after {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            &:before {
-                transition: transform $duration $easeOutBack, opacity $duration;
-            }
-            &:after {
-                transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
-            }
-        }
+      &::before, &::after {
+        content: '';
+        height: 14px;
+        width: 100%;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: 0;
+      }
+
+      &::before {
+        content: '';
+        right: 0;
+        top: 0;
+        border-top: 3px solid #f1c40f;
+        border-right: 3px solid #f39c12;
+        transform: translate(-100%, 50%);
+      }
+
+      &:after {
+        content: '';
+        left: 0;
+        bottom: 0;
+        border-bottom: 3px solid #f39c12;
+        border-left: 3px solid #f1c40f;
+        transform: translate(100%, -50%)
+      }
+
+      &:hover:before, &:hover:after {
+        transform: translate(0,0);
+        opacity: 1;
+      }
+
+      &:hover {
+        color: #e67e22;
+      }
     }
   }
 </style>
