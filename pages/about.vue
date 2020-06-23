@@ -4,10 +4,15 @@
       <figure class="avatar">
         <img src="http://nicotukiainen.com/legacy/images/portrait3.jpg">
       </figure>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <hr>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-    </div>
+        <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a href="https://www.pagero.com/">pagero.com</a>.
+        <hr/>
+        <p>I have only been working in the IT since October 2018 and before that I worked in the restaurant industry for 13 years. I am still quite novice but I'm lucky enough to be working with a team of very skilled and helpful Software Engineers. 
+        Throughout my life, I have acquired advanced technical knowledge and that has helped me adapt to these new challenges.
+        That being said, I am also an avid PC gamer. My favorite games of all time include such as Quake 2 (especially ActionQuake 2 -mod), Diablo series, World of Warcraft, Overwatch.</p>
+        <hr/>
+        <p>I also get excited about things easily, especially about technology. My long-term interests include programming, web design, 3d modeling, user experience, good food, martial arts, travelling, music and aforementioned PC gaming. I also enjoy an occasional craft beer or two every now and then.</p>
+        <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
+      </div>
   </div>
 </template>
 
@@ -32,6 +37,8 @@ export default {
     max-width: 800px;
     margin: 0 auto 5rem auto;
     font-size: 25px;
+    text-align: justify;
+    text-justify: inter-word;
   }
   .avatar {
     margin-right: 20px;

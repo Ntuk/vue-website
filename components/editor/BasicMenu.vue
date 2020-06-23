@@ -37,6 +37,12 @@
         @click="commands.undo">
         <icon name="undo-alt" size="large" />
       </button>
+       <button
+          class="menubar__button"
+          @click="showImagePrompt(commands.image)"
+        >
+          <icon name="image" size="large"/>
+      </button>
       <button
         class="menubar__button"
         @click="commands.redo">
@@ -53,6 +59,14 @@ export default {
   components: {EditorMenuBar, Icon},
   props: {
     editor: Object
+  },
+  methods: {
+    showImagePrompt(command) {
+      const src = prompt('Enter the url of your image here')
+      if (src !== null) {
+        command({ src })
+      }
+    },
   }
 }
 </script>

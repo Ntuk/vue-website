@@ -8,7 +8,7 @@
         </div>
         <div class="container">
            <h1 class="hero-header">
-            Featured project
+             Web Developer
           </h1>
           <h1 class="title">
             {{title}}
@@ -22,15 +22,18 @@
     </section>  
 </template>
 <script>
+
   export default {
+    components: {
+    },
     props: {
       title: {
         type: String,
-        default: 'Super Amazing Promo'
+        default: 'Super Amazing Title'
       },
       subtitle: {
         type: String,
-        default: 'Super Amazing Promo Subtitle'
+        default: 'Super Amazing Subtitle'
       },
       image: {
         type: String,

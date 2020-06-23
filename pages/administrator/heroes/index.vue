@@ -11,7 +11,7 @@
           <tr class="main-table-row">
             <th>Image</th>
             <th>Title</th>
-            <th>Subtitle</th>
+            <th>Date</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -41,7 +41,7 @@
                     Title: {{hero.title || 'Not Set'}}
                   </div>
                   <div class="subtitle">
-                    Subtitle: {{hero.subtitle || 'Not Set'}}
+                    Date: {{hero.subtitle || 'Not Set'}}
                   </div>
                   <figure class="image is-3by1">
                     <img :src="hero.image">

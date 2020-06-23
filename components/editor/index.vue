@@ -24,6 +24,7 @@ import BubbleMenu from '~/components/editor/BubbleMenu'
 import BasicMenu from '~/components/editor/BasicMenu'
 import {
   Heading,
+  Image,
   Bold,
   Code,
   Italic,
@@ -80,6 +81,7 @@ export default {
           }
         }),
         new Heading({ levels: [1, 2, 3]}),
+        new Image(),
         new Bold(),
         new Code(),
         new Italic(),
@@ -117,6 +119,12 @@ export default {
       const subtitle = this.getNodeValueByName('subtitle')
       
       return {content: html, title, subtitle}
+    },
+    showImagePrompt(command) {
+      const src = prompt('Enter the url of your image here')
+      if (src !== null) {
+        command({ src })
+      }
     },
     getNodeValueByName(name) {
       const docContent = this.editor.state.doc.content

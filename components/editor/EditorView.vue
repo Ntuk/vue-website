@@ -11,6 +11,7 @@
 import { Editor, EditorContent } from 'tiptap'
 import {
   Heading,
+  Image,
   Bold,
   Code,
   Italic,
@@ -52,6 +53,7 @@ export default {
         new Title(),
         new Subtitle(),
         new Heading({ levels: [1, 2, 3]}),
+        new Image(),
         new Bold(),
         new Code(),
         new Italic(),
