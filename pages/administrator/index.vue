@@ -26,6 +26,32 @@
         </div>
       </div>
     </div>
+    <div class="centered">
+      <h1 class="title">Contacts</h1>
+      <portal-target
+        v-for="contact in contacts"
+        :key="contact._id"/>
+      <table class="heroes-table table is-responsive">
+        <thead>
+          <tr class="main-table-row">
+            <th>Image</th>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="contact in contacts"
+            :key="contact._id"
+            class="table-row"
+          >
+            <td>{{contact.name|| 'Not Set'}}</td>
+            <td>{{contact.email || 'Not Set'}}</td>
+            <td>{{contact.message || 'Not Set'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 <script>
@@ -34,6 +60,14 @@ export default {
   layout: 'administrator',
   components: {
     AdministratorHeader
+  },
+  computed: {
+    contacts() {
+      return this.$store.state.contact.item
+    }
+  },
+  async fetch({store}) {
+    // await store.dispatch('contact/fetchContacts')
   }
 }
 </script>
