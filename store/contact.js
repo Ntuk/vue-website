@@ -2,19 +2,18 @@ import Vue from 'vue'
 
 export const state = () => ({
   items: [],
+  item: {}
 })
 
 export const actions = {
-  fetchContacts({commit, state}, filter) {
-    const url = this.$applyParamsToUrl('/api/v1/contacts', filter)
-    return this.$axios.$get(url)
-      .then(data => {
-        const { contacts } = data
-        commit('setContacts', {resource: 'all', contacts})
+  fetchContacts({commit}) {
+    return this.$axios.$get('/api/v1/contacts')
+      .then(contacts => {
+        commit('setItems', {resource: 'contact', items: contacts}, {root: true})
         return state.items
-      })
-      .catch(error => Promise.reject(error))
+    })
   },
+
   createContact(_, contactData) {
     return this.$axios.$post('/api/v1/contacts', contactData)
       .then(_ => this.$router.push('/'))
