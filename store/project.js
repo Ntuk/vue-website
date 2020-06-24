@@ -1,7 +1,7 @@
 
 
 export const state = () => ({
-  tems: [],
+  items: [],
   item: {}
 })
 

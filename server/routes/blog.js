@@ -6,8 +6,6 @@ const AuthCtrl = require('../controllers/auth');
 
 router.get('', blogCtrl.getBlogs);
 
-router.get('/medium', blogCtrl.getMediumBlogs);
-
 router.get('/me', AuthCtrl.onlyAuthUser,
                   AuthCtrl.onlyAdmin,
                   blogCtrl.getUserBlogs);

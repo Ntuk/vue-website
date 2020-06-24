@@ -4,8 +4,6 @@ const request = require('request');
 const AsyncLock = require('async-lock');
 const lock = new AsyncLock();
 
-const MEDIUM_URL = "https://medium.com/@filipjerga/latest?format=json&limit=20";
-
 function parseFilters(queries) {
   const parsedQueries = {};
   if (queries.filter) {

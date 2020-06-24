@@ -6,7 +6,7 @@
       </figure>
         <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a href="https://www.pagero.com/">pagero.com</a>.
         <hr/>
-        <p>I have only been working in the IT since October 2018 and before that I worked in the restaurant industry for 13 years. I am still quite novice but I'm lucky enough to be working with a team of very skilled and helpful Software Engineers. 
+        <p>I have only been working in the IT since October 2018 and before that I worked in the restaurant industry for 13 years. I am still quite novice but I'm lucky enough to be working with a team of very skilled and helpful Developers / Engineers. 
         Throughout my life, I have acquired advanced technical knowledge and that has helped me adapt to these new challenges.
         That being said, I am also an avid PC gamer. My favorite games of all time include such as Quake 2 (especially ActionQuake 2 -mod), Diablo series, World of Warcraft, Overwatch.</p>
         <hr/>

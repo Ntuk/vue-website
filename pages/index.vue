@@ -96,6 +96,7 @@ export default {
       width: 50%;
       color: #e67e22;
       background-color: #ecf0f1;
+      border: 1px solid #dbdbdb;
 
       &:hover {
         background-color: #f4f5f5;

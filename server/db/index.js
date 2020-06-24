@@ -8,6 +8,7 @@ require("../models/product");
 require("../models/category");
 require("../models/product-hero");
 require("../models/blog");
+require("../models/contact");
 
 exports.initSessionStore = function() {
   const store = new MongoDBStore({

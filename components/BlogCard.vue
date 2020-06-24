@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="content">
-        {{blog.subtitle}}
+        {{blog.subtitle | shortenText(85)}}
         <br>
       </div>
       <div class="content">

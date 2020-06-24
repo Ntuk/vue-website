@@ -97,6 +97,7 @@ export default {
     },
     createProject() {
       this.$store.dispatch('administrator/project/createProject', this.form)
+      .then(console.log(this.form));
     }
   }
 }

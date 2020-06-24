@@ -13,6 +13,7 @@ const productRoutes = require('./product');
 const categoryRoutes = require('./category');
 const blogRoutes = require('./blog');
 const apiRoutes = require('./api');
+const contactRoutes = require('./contact');
 const productHeroRoutes = require('./product-hero');
 
 require("../services/passport");
@@ -53,6 +54,8 @@ app.use('/users', usersRoutes);
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/blogs', blogRoutes);
+app.use('/contacts', contactRoutes);
+
 
 
 module.exports = {
