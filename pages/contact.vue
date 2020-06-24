@@ -222,7 +222,7 @@ export default {
     margin: 0px;
   }
   .vue-form .error-message p {
-    background: #e94b35;
+    background: #e74c3c;
     color: #ffffff;
     font-size: 1.4rem;
     text-align: center;

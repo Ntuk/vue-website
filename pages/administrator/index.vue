@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="centered">
-      <h1 class="title">Contacts</h1>
+      <h1 class="title">Messages</h1>
     </div>
     <div class="centered" style="margin-top: 20px;">
       <table class="heroes-table table is-responsive">
