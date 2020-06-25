@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hero
+    <Hero
       :title="projectHero.title"
       :subtitle="projectHero.subtitle"
       :image="projectHero.image"
