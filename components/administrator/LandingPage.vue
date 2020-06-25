@@ -13,7 +13,7 @@
               @input="($event) => emitProjectValue($event, 'title')"
               class="input is-medium"
               type="text"
-              placeholder="Dart and Flutter From Zero to Hero ">
+              placeholder="Placeholder">
           </div>
         </div>
         <div class="field">
