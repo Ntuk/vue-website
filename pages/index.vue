@@ -59,8 +59,7 @@
 import ProjectCard from '~/components/ProjectCard'
 import ProjectCardTooltip from '~/components/ProjectCardTooltip'
 import BlogCard from '~/components/BlogCard'
-import Hero from '../components/shared/Hero'
-// import Hero from '~/components/shared/Hero.vue'
+import Hero from '~/components/shared/Hero'
 import { mapState } from 'vuex'
 export default {
   head: {
