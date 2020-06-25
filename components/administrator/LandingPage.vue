@@ -88,7 +88,7 @@
               @input="($event) => emitProjectValue($event, 'productLink')"
               class="input is-medium"
               type="text"
-              placeholder="https://www.udemy.com/vue-js-2-the-full-guide-by-real-apps-vuex-router-node">
+              placeholder="https://www.nicotukiainen.com">
           </div>
         </div>
         <div class="field">
