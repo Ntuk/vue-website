@@ -2,7 +2,7 @@
    <div class="about-page">
     <div class="container">
       <figure class="avatar">
-        <img src="http://nicotukiainen.com/legacy/images/portrait3.jpg">
+        <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
       </figure>
         <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a href="https://www.pagero.com/">pagero.com</a>.
         <hr/>
