@@ -52,6 +52,7 @@
         </div>
       </div>
     </section>
+    <Footer/>
   </div>
 </template>
 
@@ -60,13 +61,14 @@ import ProjectCard from '~/components/ProjectCard'
 import ProjectCardTooltip from '~/components/ProjectCardTooltip'
 import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'
+import Footer from '~/components/shared/Footer'
 import { mapState } from 'vuex'
 export default {
   head: {
     title: 'Portfolio and Blog | Nico Tukiainen'
   },
   components: {
-    ProjectCard, BlogCard, Hero, ProjectCardTooltip
+    ProjectCard, BlogCard, Hero, ProjectCardTooltip, Footer
   },
   computed: {
     ...mapState({

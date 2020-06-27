@@ -27,19 +27,21 @@
         </div>
       </div>
     </section>
+  <Footer/>
   </div>
 </template>
 
 <script>
 import ProjectCard from '~/components/ProjectCard'
 import ProjectCardTooltip from '~/components/ProjectCardTooltip'
+import Footer from '~/components/shared/Footer'
 import { mapState } from 'vuex'
 export default {
   head: {
     title: 'Projects | Nico Tukiainen'
   },
   components: {
-    ProjectCard, ProjectCardTooltip
+    ProjectCard, ProjectCardTooltip, Footer
   },
   computed: {
     ...mapState({

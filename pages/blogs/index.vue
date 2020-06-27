@@ -1,5 +1,6 @@
 <template>
   <div>
+    <section class="section">
     <div class="main-content">
       <div class="container">
         <div class="columns is-mobile">
@@ -65,13 +66,19 @@
         </div>
       </div>
     </div>
+    </section>
+  <Footer/>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
+import Footer from '~/components/shared/Footer'
 export default {
   head: {
     title: 'Blog | Nico Tukiainen'
+  },
+  components: {
+    Footer
   },
   computed: {
     ...mapState({
@@ -121,6 +128,11 @@ export default {
 }
 </script>
 <style scoped>
+  .hero-footer.footer.footer-custom{
+    position: absolute !important; 
+    bottom: 0!important; 
+    width: 100%!important;  
+  }
 .avatar img {
   height: 32px;
   width: 32px;

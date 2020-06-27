@@ -1,43 +1,47 @@
 <template>
-   <div class="contact-page">
+  <div>
     <section class="section">
-      <div class="container">
-        <div class="is-flexible">
-          <h1 class="title">Get in touch!</h1>
-        </div>
-        <form class="vue-form" @submit.prevent="submit">
-        <fieldset>
-          <div>
-            <label class="label" for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="For example: Malcolm Function" required="" v-model="name">
+      <div class="contact-page">
+          <div class="container">
+            <div class="is-flexible">
+              <h1 class="title">Get in touch!</h1>
+            </div>
+            <form class="vue-form" @submit.prevent="submit">
+            <fieldset>
+              <div>
+                <label class="label" for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="For example: Malcolm Function" required="" v-model="name">
+              </div>
+              <div>
+                <label class="label" for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your e-mail address" required=""
+                      :class="{ email , error: !email.valid }"
+                      v-model="email.value">
+              </div>
+              <div class="error-message">
+                <p v-show="!email.valid">Oh, please enter a valid email address.</p>
+              </div>
+              <div>
+                <label class="label" for="textarea">Message</label>
+                <textarea class="message" name="textarea" id="textarea" placeholder="Write your message here" required="" 
+                          v-model="message.text" 
+                          :maxlength="message.maxlength"></textarea>
+                <span class="counter">{{ message.text.length }} / {{ message.maxlength }}</span>
+              </div>
+              <div>
+                <input type="submit" @click="sendMessage" class="button" value="Submit Form">
+              </div>
+            </fieldset>
+          </form>
           </div>
-          <div>
-            <label class="label" for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter Your e-mail address" required=""
-                  :class="{ email , error: !email.valid }"
-                  v-model="email.value">
-          </div>
-          <div class="error-message">
-            <p v-show="!email.valid">Oh, please enter a valid email address.</p>
-          </div>
-          <div>
-            <label class="label" for="textarea">Message</label>
-            <textarea class="message" name="textarea" id="textarea" placeholder="Write your message here" required="" 
-                      v-model="message.text" 
-                      :maxlength="message.maxlength"></textarea>
-            <span class="counter">{{ message.text.length }} / {{ message.maxlength }}</span>
-          </div>
-          <div>
-            <input type="submit" @click="sendMessage" class="button" value="Submit Form">
-          </div>
-        </fieldset>
-      </form>
       </div>
     </section>   
+  <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from '~/components/shared/Footer'
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 export default {
   data: function() {
@@ -53,6 +57,9 @@ export default {
       },
       submitted: false
     };
+  },
+  components: {
+    Footer
   },
   methods: {
     // submit form handler
@@ -96,6 +103,11 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+  .hero-footer.footer.footer-custom{
+    position: absolute !important; 
+    bottom: 0!important; 
+    width: 100%!important;  
+  }
   .contact-page {
     padding-top: 80px;
     max-width: 800px;
@@ -112,10 +124,6 @@ export default {
   *::after,
   *::before {
     box-sizing: border-box;
-  }
-  
-  .container {
-    min-height: 100vh;
   }
 
   .center {
