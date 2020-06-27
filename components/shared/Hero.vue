@@ -73,9 +73,11 @@ import TypeEffect from './TypeEffect.vue'
     background-color: black;
   }
   .title {
+    // font-weight: bold;
     font-size: 30px;
   }
   .subtitle {
+    /*font-weight: bold;*/
     font-size: 16px;
   }
   .author-name {
