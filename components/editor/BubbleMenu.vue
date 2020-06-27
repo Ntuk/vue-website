@@ -20,6 +20,13 @@
         :class="{ 'is-active': isActive.italic() }"
         @click="commands.italic()"
       >
+        <icon name="link" size="small" />
+      <button
+        class="menububble__button"
+        :class="{ 'is-active': isActive.link() }"
+        @click="commands.link()"
+      >
+      </button>
         <icon name="italic" size="small" />
       </button>
       <button

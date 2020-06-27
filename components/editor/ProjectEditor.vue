@@ -14,6 +14,7 @@ import ProjectMenu from '~/components/editor/ProjectMenu'
 import {
   Bold,
   Italic,
+  Link,
   History,
   OrderedList,
   BulletList,
@@ -40,6 +41,7 @@ export default {
       extensions: [
         new Bold(),
         new Italic(),
+        new Link(),
         new History(),
         new OrderedList(),
         new BulletList(),

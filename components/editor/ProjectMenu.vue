@@ -27,12 +27,19 @@
         @click.prevent="commands.ordered_list">
         <icon name="list-ol" size="large" />
       </button>
+      <button
+        class="menubar__button"
+        :class="{ 'is-active': isActive.ordered_list() }"
+        @click="commands.link">
+        <icon name="link" size="small" />
+      </button>
     </div>
   </editor-menu-bar>
 </template>
 <script>
 import { EditorMenuBar } from 'tiptap'
 import Icon from '~/components/shared/Icon'
+import { Link } from 'tiptap-extensions'
 export default {
   components: {EditorMenuBar, Icon},
   props: {

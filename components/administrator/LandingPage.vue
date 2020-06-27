@@ -30,13 +30,6 @@
         <div class="field">
           <label class="label">Project description</label>
           <div class="control">
-            <!-- <textarea
-              :value="project.description"
-              @input="($event) => emitProjectValue($event, 'description')"
-              class="textarea is-medium"
-              type="text"
-              placeholder="Write something catchy about the project">
-            </textarea> -->
           <project-editor 
             :initialContent="project.description"
             @editorUpdated="(content) => emitProjectValue(content, 'description')"

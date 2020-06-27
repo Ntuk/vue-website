@@ -29,6 +29,12 @@
       </button>
       <button
         class="menubar__button"
+        :class="{ 'is-active': isActive.link() }"
+        @click="commands.link">
+        <icon name="link" size="small" />
+      </button>
+      <button
+        class="menubar__button"
         @click="commands.horizontal_rule">
         <icon name="ruler-horizontal" size="large" />
       </button>
