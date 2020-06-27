@@ -39,7 +39,7 @@
 <style lang="scss">
   /* footer */
   .footer {
-    // display: flex;
+    align-self: flex-end;
     justify-content: center;
     align-items:  center;
     background: rgb(52,73,94);

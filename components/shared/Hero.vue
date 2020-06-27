@@ -16,7 +16,6 @@
           <h2 class="subtitle">
             {{subtitle}}
           </h2>
-          <!-- <a target="_" :href="promoLink" class="button is-danger">See more featured stuff</a> -->
         </div>
       </div>
     </section>  
@@ -56,7 +55,7 @@ import TypeEffect from './TypeEffect.vue'
     font-weight: bold;
   }
   .hero-img {
-    opacity: 0.8;
+    opacity: 0.4;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -74,11 +73,9 @@ import TypeEffect from './TypeEffect.vue'
     background-color: black;
   }
   .title {
-    // font-weight: bold;
     font-size: 30px;
   }
   .subtitle {
-    /*font-weight: bold;*/
     font-size: 16px;
   }
   .author-name {

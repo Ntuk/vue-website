@@ -33,6 +33,11 @@ html {
   height: 100% !important;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 *,
 *:before,
 *:after {
