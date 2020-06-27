@@ -1,6 +1,6 @@
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa', // TODO: Change back to 'universal' when https://github.com/lindelof/particles-bg-vue/issues/6 is answered
   /*
   ** Headers of the page
   */
@@ -52,6 +52,7 @@ module.exports = {
     {src: '~/plugins/integrations'},
     {src: '~/plugins/components'},
     {src: '~/plugins/tooltip'},
+    {src: '~/plugins/particles'},
     {src: '~/plugins/toasted', ssr: false},
     {src: '~/plugins/paginate', ssr: false},
   ],

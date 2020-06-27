@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-// <style scoped lang="scss">
+ <style scoped lang="scss">
   .hero-footer.footer.footer-custom{
     position: absolute !important; 
     bottom: 0!important; 

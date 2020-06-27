@@ -1,8 +1,12 @@
 <template>
   <div>
     <navbar />
-    <nuxt class="contents" />
-    <!-- <app-footer class="app-footer" /> -->
+    <nuxt class="contents" />    
+    <particles-bg 
+      type="cobweb"
+      color="#bdc3c7"
+      :bg="true" 
+    />
   </div>
 </template>
 <script>
@@ -28,17 +32,6 @@ html {
   box-sizing: border-box;
   height: 100% !important;
 }
-/* body{
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-.contents {
-  flex: 1 0 auto !important;
-}
-.app-footer {
-  align-self: flex-end !important;
-} */
 
 *,
 *:before,

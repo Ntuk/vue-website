@@ -1,22 +1,37 @@
 <template>
   <div class="hero-footer footer footer-custom">
-    <div class="container">
-      <div class="has-text-centered">
-        <span class="icon">
-          <a target="_" href="https://github.com/Ntuk"><i class="fab fa-github" fa-rotate-270></i></a>
-        </span>
-        <span class="icon">
-          <a target="_" href="https://www.facebook.com/nico.tukiainen"><i class="fab fa-facebook"></i></a>
-        </span>
-        <span class="icon">
-          <a target="_" href="https://www.instagram.com/nicotuk/"><i class="fab fa-instagram"></i></a>
-        </span>
-        <span class="icon">
-          <a target="_" href="https://discordapp.com/users/ntuk#2369"><i class="fab fa-discord"></i></a>
-        </span>
-        <span class="icon">
-          <a target="_" href="https://www.linkedin.com/in/nico-tukiainen-a97442131/"><i class="fab fa-linkedin"></i></a>
-        </span>
+    <div class="footer-container">
+      <div class="footer-left-side">
+        © Nico tukiainen 2020
+      </div>
+      <div class="footer-center">
+      </div>
+      <div class="footer-right-side">
+        <div>
+          <span class="icon">
+            <a target="_" href="https://github.com/Ntuk"><i class="fab fa-github" fa-rotate-270></i></a>
+          </span>
+        </div>
+        <div>
+          <span class="icon">
+            <a target="_" href="https://www.facebook.com/nico.tukiainen"><i class="fab fa-facebook"></i></a>
+          </span>
+        </div>
+        <div>
+          <span class="icon">
+            <a target="_" href="https://www.instagram.com/nicotuk/"><i class="fab fa-instagram"></i></a>
+          </span>
+        </div>
+        <div>
+          <span class="icon">
+            <a target="_" href="https://discordapp.com/users/ntuk#2369"><i class="fab fa-discord"></i></a>
+          </span>
+        </div>
+        <div>
+          <span class="icon">
+            <a target="_" href="https://www.linkedin.com/in/nico-tukiainen-a97442131/"><i class="fab fa-linkedin"></i></a>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -24,51 +39,48 @@
 <style lang="scss">
   /* footer */
   .footer {
-    display: flex;
+    // display: flex;
     justify-content: center;
     align-items:  center;
     background: rgb(52,73,94);
     background: radial-gradient(circle, rgba(52,73,94,1) 0%, rgba(44,62,80,1) 100%);
+    padding: 20px 0;
   }
   .icon {
-    // margin-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    display: inline-flex;
+    // padding-left: 40px;
+    // padding-right: 40px;
     font-size: 25px;
 
-    i {
-      &:hover {
-        animation: anim-glow 2s ease infinite;
-      }
-    }
-    .fa-instagram, .fa-discord, .fa-linkedin {
-      &:hover {
-        animation: anim-glow-square 2s ease infinite;
-      }
+    &:hover {
+      text-shadow: 0 0 8px #f1c40f;
+      transition:  0.8s;
     }
   }
-  @keyframes anim-glow {
-	0% {
-    border-radius:  50%;
-		box-shadow: 0 0 rgba(#f1c40f, 1);
-	}
-	100% {
-    border-radius:  50%;
-		box-shadow: 0 0 10px 8px transparent;
-		border-width: 2px;
-	}
-}
-  @keyframes anim-glow-square {
-	0% {
-    border-radius:  35%;
-		box-shadow: 0 0 rgba(#f1c40f, 1);
-	}
-	100% {
-    border-radius:  35%;
-		box-shadow: 0 0 10px 8px transparent;
-		border-width: 2px;
-	}
-}
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-left-side  {
+    justify-content: space-evenly;
+    display: flex;
+    width: 40%;
+    font-size: 14px;
+    color: #e67e22;   
+  }
+  .footer-center {
+    width: 20%;
+    justify-content: space-evenly;
+    color: #e67e22;
+    font-size: 14px;
+  }
+  .footer-right-side {
+    width: 40%;
+    order: 1;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .footer-custom {
       background-color: #0d0c0d;
       color: #fff;
