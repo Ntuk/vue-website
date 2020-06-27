@@ -30,15 +30,15 @@ import TypeEffect from './TypeEffect.vue'
     props: {
       title: {
         type: String,
-        default: 'Super Amazing Title'
+        default: ''
       },
       subtitle: {
         type: String,
-        default: 'Super Amazing Subtitle'
+        default: ''
       },
       image: {
         type: String,
-        default: 'https://images.unsplash.com/photo-1510519138101-570d1dca3d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1631&q=80'
+        default: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
       },
       promoLink: {
         type: String,
