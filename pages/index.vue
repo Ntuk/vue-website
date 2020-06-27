@@ -9,7 +9,7 @@
     <section class="section">
       <div class="container">
         <div class="is-flexible">
-          <h1 class="title">Featured Projects</h1> 
+          <h1 class="title">Featured Projects</h1>
           <button @click="$router.push(`/projects/`)" class="button">See all projects</button>
         </div>
         <div class="columns is-multiline">
@@ -40,7 +40,7 @@
       <div class="container">
         <div class="is-flexible">
           <h1 class="title">Featured Blogs</h1> 
-          <button @click="$router.push(`/blogs/`)" class="button">See all blogs</button>
+          <button @click="$router.push(`/blogs/`)" class="button">See all blog posts</button>
         </div>
         <div class="columns is-multiline">
           <div v-for="blog in featuredBlogs" :key="blog._id" class="column is-one-quarter">
@@ -86,17 +86,13 @@ export default {
   .is-flexible {
     display: inline-flex;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
     width: 100%;
 
-    h1 {
-      width: 50%;
-    }
     button {
-      width: 50%;
       color: #e67e22;
       background-color: #ecf0f1;
       border: 1px solid #dbdbdb;
+      margin-left: 16px;
 
       &:hover {
         background-color: #f4f5f5;

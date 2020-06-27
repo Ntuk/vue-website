@@ -36,9 +36,21 @@ export default {
     position: relative;
     max-width: 800px;
     margin: 0 auto 5rem auto;
-    font-size: 25px;
+    font-size: 1.1rem;
     text-align: justify;
     text-justify: inter-word;
+
+    //tablets, big phones
+    @media only screen and (min-width: 600px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    // xs-devices, phones
+    @media only screen and (max-width: 600px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
   .avatar {
     margin-right: 20px;

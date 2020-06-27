@@ -1,12 +1,12 @@
 <template>
    <div class="contact-page">
-    <div class="container">
-      <form class="vue-form" @submit.prevent="submit">
-        <div class="error-message">
-          <p v-show="!email.valid">Oh, please enter a valid email address.</p>
+    <section class="section">
+      <div class="container">
+        <div class="is-flexible">
+          <h1 class="title">Get in touch!</h1>
         </div>
+        <form class="vue-form" @submit.prevent="submit">
         <fieldset>
-          <legend><h1>Get in touch!</h1></legend>
           <div>
             <label class="label" for="name">Name</label>
             <input type="text" name="name" id="name" placeholder="For example: Malcolm Function" required="" v-model="name">
@@ -17,6 +17,9 @@
                   :class="{ email , error: !email.valid }"
                   v-model="email.value">
           </div>
+          <div class="error-message">
+            <p v-show="!email.valid">Oh, please enter a valid email address.</p>
+          </div>
           <div>
             <label class="label" for="textarea">Message</label>
             <textarea class="message" name="textarea" id="textarea" placeholder="Write your message here" required="" 
@@ -25,11 +28,12 @@
             <span class="counter">{{ message.text.length }} / {{ message.maxlength }}</span>
           </div>
           <div>
-            <input type="submit" @click="sendMessage" value="Submit Form">
+            <input type="submit" @click="sendMessage" class="button" value="Submit Form">
           </div>
         </fieldset>
       </form>
-    </div>
+      </div>
+    </section>   
   </div>
 </template>
 
@@ -94,10 +98,15 @@ export default {
 <style scoped lang="scss">
   .contact-page {
     padding-top: 80px;
-    position: relative;
     max-width: 800px;
     margin: 0 auto 5rem auto;
     font-size: 25px;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+  .is-flexible {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
   }
   *,
   *::after,
@@ -124,17 +133,6 @@ export default {
   header h1 {
     text-align: center;
     font-size: 16px;
-  }
-
-  .vue-form {
-    font-size: 16px;
-    width: 500px;
-    padding: 15px 30px;
-    border-radius: 4px;
-    margin: 50px auto;
-    width: 500px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
   }
   .vue-form fieldset {
     margin: 24px 0 0 0;
@@ -194,10 +192,8 @@ export default {
     border: none;
     background: #ecf0f1;
     border: 1px solid #dbdbdb;
-    border-radius: 0.25em;
-    padding: 12px 20px;
+    border-radius: 4px;
     color: #e67e22;
-    font-weight: bold;
     float: right;
     cursor: pointer;
     -webkit-font-smoothing: antialiased;
@@ -218,18 +214,17 @@ export default {
     outline: none;
   }
   .vue-form .error-message {
-    height: 35px;
+    height: 26px;
     margin: 0px;
   }
   .vue-form .error-message p {
-    background: #e74c3c;
-    color: #ffffff;
-    font-size: 1.4rem;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    border-radius: 0.25em;
-    padding: 16px;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0.75rem;
+    border: solid 1px red;
+    background-color: pink;
+    font-size: 14px;
   }
   .vue-form .error {
     border-color: #e94b35 !important;
