@@ -7,4 +7,16 @@
 
 .blog-editor-container {
   padding-top: 60px;
+  
+  //tablets, big phones
+  @media only screen and (min-width: 600px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  // xs-devices, phones
+  @media only screen and (max-width: 600px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
