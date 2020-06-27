@@ -16,8 +16,10 @@
                   <h4 class="title is-4">{{blog.title}}</h4>
                   <h5 class="subtitle is-5">{{blog.subtitle}}</h5>
                 </div>
-                <div class="post-content">
-                  by {{blog.author.name}}, {{blog.createdAt | formatDate}}
+                <div class="post-content">                   
+                  <figure class="avatar">
+                    <img :src="blog.author.avatar" class="avatar"/>
+                  </figure> {{blog.author.name}}, {{blog.createdAt | formatDate}}
                 </div>
               </div>
             </div>
@@ -119,8 +121,20 @@ export default {
 }
 </script>
 <style scoped>
+.avatar img {
+  height: 32px;
+  width: 32px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  margin-right: 8px;
+}
 .post-content {
+  display: flex;
+  justify-content: flex-start;
   font-style: italic;
+  align-items: center;
 }
 .pagination-content {
   display: flex;
