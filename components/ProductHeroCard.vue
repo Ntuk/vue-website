@@ -6,6 +6,7 @@
       </figure>
     </div>
     <div class="card-content">
+      <a target="_blank" :href="navigateTo"><i class="fab fa-github" fa-rotate-270></i> Project in Github</a>
     </div>
   </div>
 </template>
@@ -30,6 +31,17 @@ export default {
 <style scoped lang="scss">
   .card-content {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+    a {
+      color: #f39c12;
+
+      &:hover {
+        color: #e67e22;
+      }
+    }
   }
   .card {
     z-index: 9999;
@@ -38,7 +50,6 @@ export default {
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
-    // box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
     .title {
       color: gray;
     }

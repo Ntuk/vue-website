@@ -1,10 +1,8 @@
 <template>
-  <!-- Finish handling of URL -->
   <div>
     <Header
       title="Write your blog"
       exitLink="/administrator/blogs">
-      <!-- TODO: Check if blog status is active -->
       <template v-if="blog.status === 'active'" #actionMenu>
         <div class="full-page-takeover-header-button">
           <Modal
@@ -14,10 +12,10 @@
             openBtnClass="button is-success is-medium is-inverted is-outlined"
             title="Review Details">
             <div>
-              <div class="title">Once you publish blog you cannot change url to a blog.</div>
+              <div class="title">Once you publish your ramble, you cannot change url to a rambling.</div>
               <!-- Check for error -->
               <div v-if="!publishError">
-                <div class="subtitle">This is how url to blog post will look like after publish:</div>
+                <div class="subtitle">This is how url to rambling will look like after publish:</div>
                 <article class="message is-success">
                   <div class="message-body">
                     <strong>{{getCurrentUrl()}}/blogs/{{slug}}</strong>
@@ -40,7 +38,7 @@
             openBtnClass="button is-success is-medium is-inverted is-outlined"
             title="Unpublish Blog">
             <div>
-              <div class="title">Unpublish blog so it's no longer displayed in blogs page</div>
+              <div class="title">Unpublish rambling so it's no longer displayed in ramblings page</div>
             </div>
           </Modal>
         </div>

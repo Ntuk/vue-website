@@ -37,7 +37,7 @@ import TypeEffect from './TypeEffect.vue'
       },
       image: {
         type: String,
-        default: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        default: 'https://images.pexels.com/photos/167259/pexels-photo-167259.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       },
       promoLink: {
         type: String,

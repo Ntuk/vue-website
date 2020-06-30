@@ -5,11 +5,10 @@
       :subtitle="project.subtitle"
       :author="project.author">
       <product-hero-card
-        :price="project.price"
-        :discountedPrice="project.discountedPrice"
         :navigateTo="project.productLink"
         :requirements="project.requirements"
-        :image="project.image" />
+        :image="project.image" 
+      />
     </product-hero>
     <div class="container">
       <div class="columns">
@@ -20,7 +19,6 @@
                 Technologies used
               </div>
               <ul class="what-you-get-items">
-                <!-- TODO: Iterate project wsl -->
                 <li
                    v-for="wsl in project.wsl"
                    :key="wsl.value"
@@ -33,7 +31,6 @@
           <div class="section project-description p-t-none">
             <div class="project-description-title">Project Info</div>
             <div class="project-description-details">
-              <!-- TODO: use v-html for description -->
               <div v-html="project.description"></div>
             </div>
           </div>
@@ -67,14 +64,6 @@ export default {
   }
 }
 </script>
-
-<!-- Fetch project by Slug -->
-<!-- 1. create action "fetchProjectBySlug" in store/project.js -->
-<!-- 2. send GET request '/api/v1/products/s/:slug' -->
-<!-- 3. expect to receive "project" in "then" and commit it to state -->
-<!-- 4. get project in computed properties -->
-<!-- 5. Complete TODO's -->
-<!-- 6. Navigate to detail page from home page when clicking on "Learn More" -->
 
 <style lang="scss">
   .what-you-get {

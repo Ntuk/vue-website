@@ -2,7 +2,7 @@
   <nav class="navbar is-active" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nav-link class="navbar-item nico" to="/">
-        <h1 class="brand-title">Nico Tukiainen</h1>
+        <h1 class="nico-title">Nico Tukiainen</h1>
       </nav-link>      
       <a @click="isActive = !isActive"
          :class="{'is-active': isActive}"
@@ -31,7 +31,7 @@
           Projects
         </nav-link>
         <nav-link to="/blogs" class="navbar-item">
-          Blog
+          Ramblings
         </nav-link>
         <nav-link to="/contact" class="navbar-item">
           Contact
@@ -102,6 +102,8 @@ export default {
   }
   .navbar-menu {
     background-image: linear-gradient(to right, #34495e , #2c3e50);
+    display: flex;
+    align-items: center;
   }
   .brand-title {
     font-size: 35px;
@@ -109,13 +111,18 @@ export default {
   }
   .navbar-brand {
     padding-right: 30px;
+    display: flex;
+    align-items: center;
 
     @media screen and (max-width: 1023px) {
       padding-right: 0px;
     }
   }
   .navbar-item {
+    height: 3rem;
+    align-content: center;
     color: #f39c12;
+
       &:hover {
         background-color: transparent;
         color: #e67e22;
@@ -126,6 +133,11 @@ export default {
     color: #f39c12 !important;
     margin: 0 !important;
   }
+  .nico-title {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
   .navbar-item.is-active {
     color: #e67e22;
     font-weight: normal;

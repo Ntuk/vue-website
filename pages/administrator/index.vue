@@ -15,7 +15,7 @@
         <!-- Go to /administrator/blogs -->
         <div class="box" @click="$router.push('/administrator/blogs')">
           <div>
-            Blogs
+            Ramblings
           </div>
         </div>
         <!-- Go to /administrator/heroes -->

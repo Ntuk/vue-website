@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header
-      title="Write your Blogs"
+      title="Ramble away!"
       exitLink="/administrator/blogs"
     />
     <div class="blog-editor-container">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header
-      title="Manage your Blogs"
+      title="Manage your Ramblings"
       exitLink="/"
     />
     <div class="administrator-blogs">
@@ -10,7 +10,7 @@
           <div class="header-block">
             <h2>Your Stories</h2>
             <div class="title-menu">
-              <button @click="$router.push('/administrator/blog/editor')" class="button">Write a story</button>
+              <button @click="$router.push('/administrator/blog/editor')" class="button">Ramble!</button>
             </div>
           </div>
           <div class="tabs">
@@ -77,7 +77,7 @@
               </div>
               <!-- In case of no drafts blogs  -->
               <div v-else class="blog-error">
-                No Published Blogs :(
+                No Published ramblings :(
               </div>
             </template>
           </div>

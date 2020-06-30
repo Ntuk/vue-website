@@ -36,7 +36,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .card {
+    padding: 0.75rem;
+  }
   .card-image {
+    border: 1px solid #95a5a6;
     filter: grayscale(0);
     transition: .3s ease-in-out;
     

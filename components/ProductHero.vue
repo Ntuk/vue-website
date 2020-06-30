@@ -38,18 +38,19 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Some Default Catchy Title'
+      default: 'Main title'
     },
     subtitle: {
       type: String,
-      default: 'Some Default Catchy Subtitle'
+      default: 'Subtitle'
     },
     author: {
       type: Object,
       default: null
-    }
+    },
   }
 }
+console.log
 </script>
 
 <style scoped lang="scss">

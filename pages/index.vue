@@ -39,8 +39,8 @@
     <section class="section">
       <div class="container">
         <div class="is-flexible">
-          <h1 class="title">Featured Blogs</h1> 
-          <button @click="$router.push(`/blogs/`)" class="button">See all blog posts</button>
+          <h1 class="title">Featured ramblings</h1> 
+          <button @click="$router.push(`/blogs/`)" class="button">See all ramblings</button>
         </div>
         <div class="columns is-multiline">
           <div v-for="blog in featuredBlogs" :key="blog._id" class="column is-one-quarter">

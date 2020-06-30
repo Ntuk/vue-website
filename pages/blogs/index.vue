@@ -46,7 +46,7 @@
             <div class="section">
               <div class="sidebar">
                 <div class="sidebar-header">
-                  <h4 class="title is-4">Featured Blogs</h4>
+                  <h4 class="title is-4">Featured ramblings</h4>
                 </div>
                 <div class="sidebar-list">
                   <!-- Featured Blogs -->

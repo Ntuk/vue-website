@@ -22,9 +22,6 @@ export default {
 
 <style scoped lang="scss">
   .is-active {
-    // border-bottom: 4px solid #e67e22;
-    // border-left: 2px solid #e67e22;
-    // border-right: 2px solid #e67e22;
     font-weight: bold;
 
     $red: #f39c12;
@@ -42,8 +39,8 @@ export default {
 
       &::before, &::after {
         content: '';
-        height: 14px;
-        width: 100%;
+        height: 8px;
+        width: 8px;
         position: absolute;
         transition: all .35s ease;
         opacity: 0;
