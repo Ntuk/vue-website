@@ -128,11 +128,14 @@ export default {
 }
 </script>
 <style scoped>
-  .hero-footer.footer.footer-custom{
-    position: absolute !important; 
-    bottom: 0!important; 
-    width: 100%!important;  
-  }
+.hero-footer.footer.footer-custom{
+  position: absolute !important; 
+  bottom: 0!important; 
+  width: 100%!important;  
+}
+/* .post, .sidebar {
+  background: rgba(236, 240, 241, 0.7); ;
+} */
 .avatar img {
   height: 32px;
   width: 32px;
