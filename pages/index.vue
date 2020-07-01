@@ -90,6 +90,9 @@ export default {
     height: 100%;
     margin: 0;
   }
+  .section {
+    margin-bottom: 100px;
+  }
   .is-flexible {
     display: inline-flex;
     flex-wrap: nowrap;

@@ -103,18 +103,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .hero-footer.footer.footer-custom{
-    position: absolute !important; 
-    bottom: 0!important; 
-    width: 100%!important;  
-  }
-  @media screen and (max-width: 1023px) {
-    .hero-footer.footer.footer-custom {
-      position: relative !important;
-      bottom: 0; 
-      width: 100%;
-    }
-  }
   .contact-page {
     padding-top: 80px;
     max-width: 800px;
@@ -123,12 +111,16 @@ export default {
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 
-.title {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: rgba(0,0,0,.84)!important;
-    fill: rgba(0,0,0,.84)!important;
-}
+  .section {
+    margin-bottom: 100px;
+  }
+
+  .title {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: rgba(0,0,0,.84)!important;
+      fill: rgba(0,0,0,.84)!important;
+  }
   .is-flexible {
   display: inline-flex;
   flex-wrap: nowrap;

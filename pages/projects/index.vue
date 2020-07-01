@@ -56,6 +56,9 @@ export default {
 
 <style scoped lang="scss">
   // Home page
+  .section {
+    margin-bottom: 100px;
+  }
   .links {
     padding-top: 15px;
   }

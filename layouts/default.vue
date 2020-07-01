@@ -4,7 +4,7 @@
     <nuxt class="contents" />
     <particles-bg 
       type="cobweb"
-      color="#f1c40f"
+      color="#dce0e0"
       num="120"
       :bg="true" 
     />

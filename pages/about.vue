@@ -35,21 +35,6 @@ export default {
 </script>
 
  <style scoped lang="scss">
-  @media screen and (min-width: 1024px) {
-    .hero-footer.footer.footer-custom{
-      position: absolute; 
-      bottom: 0; 
-      width: 100%;
-    }
-  }
-  @media screen and (min-width: 598px) and (max-width: 1023px) {
-    .hero-footer.footer.footer-custom {
-      position: absolute;
-      bottom: 0; 
-      width: 100%;
-    }
-  }
-
   .about-page {
     flex: 1;
     padding-top: 80px;
@@ -96,6 +81,7 @@ export default {
     box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   }
   .section {
+    margin-bottom: 100px;
     padding-top: 0;
   }
 </style>

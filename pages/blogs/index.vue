@@ -128,17 +128,7 @@ export default {
 }
 </script>
 <style scoped>
-.hero-footer.footer.footer-custom{
-  position: absolute !important; 
-  bottom: 0!important; 
-  width: 100%!important;  
-}
   @media screen and (max-width: 314px) {
-    .hero-footer.footer.footer-custom {
-      position: relative !important;
-      bottom: 0; 
-      width: 100%;
-    }
     .container {
       margin-left: 2rem;
       margin-right: 2rem;
@@ -154,11 +144,6 @@ export default {
     }
   }
   @media screen and (min-width: 314px) and (max-width: 1024px){
-    .hero-footer.footer.footer-custom {
-      position: relative !important;
-      bottom: 0; 
-      width: 100%;
-    }
     .container {
       margin-left: 2rem;
       margin-right: 2rem;
@@ -172,6 +157,9 @@ export default {
     .column.is-8 {
       width: 100% !important;
     }
+  }
+  .section {
+    margin-bottom: 100px;
   }
 /* .post, .sidebar {
   background: rgba(236, 240, 241, 0.7); ;
