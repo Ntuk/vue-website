@@ -133,6 +133,13 @@ export default {
   bottom: 0!important; 
   width: 100%!important;  
 }
+  @media screen and (max-width: 406px) {
+    .hero-footer.footer.footer-custom {
+      position: relative !important;
+      bottom: 0; 
+      width: 100%;
+    }
+  }
 /* .post, .sidebar {
   background: rgba(236, 240, 241, 0.7); ;
 } */

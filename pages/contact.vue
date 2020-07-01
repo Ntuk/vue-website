@@ -108,6 +108,13 @@ export default {
     bottom: 0!important; 
     width: 100%!important;  
   }
+  @media screen and (max-width: 1023px) {
+    .hero-footer.footer.footer-custom {
+      position: relative !important;
+      bottom: 0; 
+      width: 100%;
+    }
+  }
   .contact-page {
     padding-top: 80px;
     max-width: 800px;
