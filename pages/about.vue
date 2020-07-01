@@ -13,6 +13,7 @@
           That being said, I am also an avid PC gamer. My favorite games of all time include such as Quake 2 (especially ActionQuake 2 -mod), Diablo series, World of Warcraft, Overwatch.</p>
           <hr/>
           <p>I also get excited about things easily, especially about technology. My long-term interests include programming, web design, 3d modeling, user experience, good food, martial arts, travelling, music and aforementioned PC gaming. I also enjoy an occasional craft beer or two every now and then.</p>
+          <hr/>
           <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
         </div>
     </div>
@@ -59,6 +60,10 @@ export default {
     text-align: justify;
     text-justify: inter-word;
 
+    hr {
+      background-color: transparent;
+    }
+
     //tablets, big phones
     @media only screen and (min-width: 600px) {
       padding-left: 40px;
@@ -70,6 +75,12 @@ export default {
       padding-left: 40px;
       padding-right: 40px;
     }
+  }
+  .container {
+    padding: 2rem;
+    border: 1px dashed #f1c40f;
+    border-radius: 5px;
+    background-color: rgba(189, 195, 199, 0.3);
   }
   .avatar {
     margin-right: 20px;
@@ -83,5 +94,8 @@ export default {
     border-radius: 50%;
     -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
     box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  }
+  .section {
+    padding-top: 0;
   }
 </style>

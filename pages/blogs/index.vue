@@ -75,7 +75,7 @@ import { mapState } from 'vuex'
 import Footer from '~/components/shared/Footer'
 export default {
   head: {
-    title: 'Blog | Nico Tukiainen'
+    title: 'Ramblings | Nico Tukiainen'
   },
   components: {
     Footer
@@ -215,11 +215,14 @@ a.nav-item.is-tab:hover {
 }
 /* main content */
 .main-content {
-    padding: 4rem 0 2rem 0;
+    padding: 80px 0 2rem 0;
     min-height: 800px
 }
 .main-content .container {
-    padding: 0 2rem 2rem 2rem;
+  padding: 2rem;
+  border: 1px dashed #f1c40f;
+  border-radius: 5px;
+  background-color: rgba(189, 195, 199, 0.3);
 }
 /* section */
 .section {
@@ -242,9 +245,9 @@ a.nav-item.is-tab:hover {
 }
 /* sidebar */
 .sidebar-header {
-    border-color: #d74436;
+    border-color: #d35400;
     padding-bottom: 1rem;
-    border-bottom: 4px solid #d74436;
+    border-bottom: 4px solid #d35400;
 }
 .sidebar-header .title, .sidebar-header-single .title {
     font-weight: 700;
@@ -284,9 +287,9 @@ a.nav-item.is-tab:hover {
 }
 /* post */
 .post-header, .sidebar-header-single {
-    border-color: #d74436;
+    border-color: #d35400;
     padding-left: 1rem;
-    border-left: 4px solid #d74436;
+    border-left: 4px solid #d35400;
 }
 .post-header .title {
     font-weight: 700;

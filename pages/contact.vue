@@ -4,7 +4,7 @@
       <div class="contact-page">
           <div class="container">
             <div class="is-flexible">
-              <h1 class="title">Get in touch!</h1>
+              <h4 class="title is-4">Get in touch!</h4>
             </div>
             <form class="vue-form" @submit.prevent="submit">
             <fieldset>
@@ -122,6 +122,13 @@ export default {
     font-size: 25px;
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
+
+.title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: rgba(0,0,0,.84)!important;
+    fill: rgba(0,0,0,.84)!important;
+}
   .is-flexible {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -137,6 +144,17 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .section {
+    padding-top: 0;
+  }
+
+  .container {
+    padding: 2rem;
+    border: 1px dashed #f1c40f;
+    border-radius: 5px;
+    background-color: rgba(189, 195, 199, 0.3);
   }
 
   header {
@@ -163,7 +181,7 @@ export default {
   }
   .vue-form h4,
   .vue-form .label {
-    color: #94aab0;
+    color: #7f8c8d;
     margin-bottom: 10px;
   }
   .vue-form .label {

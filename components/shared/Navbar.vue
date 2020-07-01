@@ -102,7 +102,7 @@ export default {
     background-color: #34495e;
   }
   .navbar-menu {
-    background-image: linear-gradient(to right, #34495e , #2c3e50);
+    background: linear-gradient(to right, #34495e , #2c3e50);
     align-items: center;
   }
   .brand-title {
@@ -160,10 +160,6 @@ export default {
     padding-right: 0.75em;
     text-align: center;
     white-space: nowrap;
-
-    // &:after, &:before {
-    //   content: none;
-    // }
   }
   @media screen and (max-width: 1024px) {
     .navbar-menu {

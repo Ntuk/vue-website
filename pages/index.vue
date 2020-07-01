@@ -65,7 +65,7 @@ import Footer from '~/components/shared/Footer'
 import { mapState } from 'vuex'
 export default {
   head: {
-    title: 'Portfolio and Blog | Nico Tukiainen'
+    title: 'Nico Tukiainen'
   },
   components: {
     ProjectCard, BlogCard, Hero, ProjectCardTooltip, Footer
