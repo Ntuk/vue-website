@@ -20,7 +20,7 @@
     <div :class="{'is-active': isActive}"
          id="navbarBasicExample"
          class="navbar-menu">
-      <div class="navbar-start">
+      <div class="navbar-start" @click="isActive = !isActive">
         <nav-link to="/" class="navbar-item">
           Home
         </nav-link>
@@ -60,10 +60,11 @@
               </a>
             </template>
             <template v-else>
-              <nav-link to="/register" class="button is-primary" id="no-nav-decos">
+              <nav-link to="/register" id="login-signup">
                 Sign up
               </nav-link>
-              <nav-link to="/login" class="button is-light" id="no-nav-decos">
+              <i class="fa fa-user" aria-hidden="true"/>
+              <nav-link to="/login" id="login-signup">
                 Log in
               </nav-link>
             </template>
@@ -102,7 +103,6 @@ export default {
   }
   .navbar-menu {
     background-image: linear-gradient(to right, #34495e , #2c3e50);
-    display: flex;
     align-items: center;
   }
   .brand-title {
@@ -149,9 +149,32 @@ export default {
   .avatar {
     margin-right: 5px;
   }
-  #no-nav-decos {    
-    &:after, &:before {
-      content: none;
+  .fa-user {
+    padding-bottom: 8px;
+  }
+  #login-signup {    
+    color: #e67e22;
+    cursor: pointer;
+    justify-content: center;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    text-align: center;
+    white-space: nowrap;
+
+    // &:after, &:before {
+    //   content: none;
+    // }
+  }
+  @media screen and (max-width: 1024px) {
+    .navbar-menu {
+      align-items: center;
+    }
+    .navbar-item, .is-active {
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>
