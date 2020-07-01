@@ -5,12 +5,12 @@
         <h1 class="nico-title">Nico Tukiainen</h1>
       </nav-link>      
       <a @click="isActive = !isActive"
-         :class="{'is-active': isActive}"
-         role="button"
-         class="navbar-burger burger"
-         aria-label="menu"
-         aria-expanded="false"
-         data-target="navbarBasicExample">
+        :class="{'is-active': isActive}"
+        role="button"
+        class="navbar-burger burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -18,8 +18,8 @@
     </div>
 
     <div :class="{'is-active': isActive}"
-         id="navbarBasicExample"
-         class="navbar-menu">
+        id="navbarBasicExample"
+        class="navbar-menu">
       <div class="navbar-start" @click="isActive = !isActive">
         <nav-link to="/" class="navbar-item">
           Home
@@ -51,8 +51,8 @@
               </div>
               <!-- If Admin -->
               <button
-                 v-if="isAdmin" class="button is-link is-outlined"
-                 @click="() => $router.push('/administrator')">
+                v-if="isAdmin" class="button is-link is-outlined"
+                @click="() => $router.push('/administrator')">
                 Administrator
               </button>
               <a class="button is-primary" @click="logout">

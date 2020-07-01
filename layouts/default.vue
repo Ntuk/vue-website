@@ -1,10 +1,11 @@
 <template>
   <div>
     <navbar />
-    <nuxt class="contents" />    
+    <nuxt class="contents" />
     <particles-bg 
       type="cobweb"
-      color="#bdc3c7"
+      color="#f1c40f"
+      num="120"
       :bg="true" 
     />
   </div>
