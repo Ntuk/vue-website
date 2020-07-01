@@ -38,6 +38,7 @@
     "tiptap-extensions": "^1.29.1",
     "v-tooltip": "^2.0.2",
     "vue-toasted": "^1.1.27",
+    "vue2-smooth-scroll": "^1.4.2",
     "vuejs-paginate": "^2.1.0",
     "vuelidate": "^0.7.4"
   },

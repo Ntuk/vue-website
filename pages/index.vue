@@ -6,7 +6,7 @@
       :image="projectHero.image"
       :promoLink="projectHero.product && projectHero.product.productLink"
     />
-    <section class="section">
+    <section class="section" id="contents-of-index">
       <div class="container">
         <div class="is-flexible">
           <h1 class="title">Featured Projects</h1>
