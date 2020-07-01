@@ -34,14 +34,21 @@ export default {
 </script>
 
  <style scoped lang="scss">
- @media screen and (min-width: 1024px) {
-
+  @media screen and (min-width: 1024px) {
     .hero-footer.footer.footer-custom{
-      position: absolute !important; 
-      bottom: 0 !important; 
-      width: 100% !important;  
+      position: absolute; 
+      bottom: 0; 
+      width: 100%;
     }
   }
+  @media screen and (min-width: 598px) and (max-width: 1023px) {
+    .hero-footer.footer.footer-custom {
+      position: absolute;
+      bottom: 0; 
+      width: 100%;
+    }
+  }
+
   .about-page {
     flex: 1;
     padding-top: 80px;
