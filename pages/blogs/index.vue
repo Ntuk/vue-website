@@ -43,7 +43,7 @@
           <!-- side bar -->
           <div class="column is-4 is-narrow">
             <!-- featured -->
-            <div class="section">
+            <div class="section featured-check">
               <div class="sidebar">
                 <div class="sidebar-header">
                   <h4 class="title is-4">Featured ramblings</h4>
@@ -133,18 +133,44 @@ export default {
   bottom: 0!important; 
   width: 100%!important;  
 }
-  @media screen and (max-width: 406px) {
+  @media screen and (max-width: 314px) {
     .hero-footer.footer.footer-custom {
       position: relative !important;
       bottom: 0; 
       width: 100%;
     }
+    .container {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    .featured-check {
+      display: none;
+    }
+    .column.is-4.is-narrow {
+      display: none;
+    }
+    .column.is-8 {
+      width: 100% !important;
+    }
   }
-  @media screen and (min-width: 407px) and (max-width: 1024px){
+  @media screen and (min-width: 314px) and (max-width: 1024px){
     .hero-footer.footer.footer-custom {
       position: relative !important;
       bottom: 0; 
       width: 100%;
+    }
+    .container {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    .featured-check {
+      display: none;
+    }
+    .column.is-4.is-narrow {
+      display: none;
+    }
+    .column.is-8 {
+      width: 100% !important;
     }
   }
 /* .post, .sidebar {
