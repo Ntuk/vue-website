@@ -47,7 +47,7 @@ export default {
     author: {
       type: Object,
       default: null
-    },
+    }
   }
 }
 console.log

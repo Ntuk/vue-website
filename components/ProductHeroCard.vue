@@ -5,7 +5,7 @@
         <img :src="image" alt="Placeholder image">
       </figure>
     </div>
-    <div class="card-content">
+    <div v-if="navigateTo != ''" class="card-content">
       <a target="_blank" :href="navigateTo"><i class="fab fa-github" fa-rotate-270></i> Project in Github</a>
     </div>
   </div>
