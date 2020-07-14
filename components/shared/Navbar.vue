@@ -59,7 +59,7 @@
                 Logout
               </a>
             </template>
-            <template v-else>
+            <!-- <template v-else>
               <nav-link to="/register" id="login-signup">
                 Sign up
               </nav-link>
@@ -67,10 +67,11 @@
               <nav-link to="/login" id="login-signup">
                 Log in
               </nav-link>
-            </template>
+            </template> -->
           </div>
         </div>
       </div>
+      
     </div>
   </nav>
 </template>
