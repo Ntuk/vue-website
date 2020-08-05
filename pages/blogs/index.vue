@@ -67,18 +67,13 @@
       </div>
     </div>
     </section>
-  <Footer/>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
-import Footer from '~/components/shared/Footer'
 export default {
   head: {
-    title: 'Ramblings | Nico Tukiainen'
-  },
-  components: {
-    Footer
+    title: 'AFPS Finland'
   },
   computed: {
     ...mapState({

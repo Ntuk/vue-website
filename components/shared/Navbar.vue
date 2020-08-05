@@ -1,81 +1,188 @@
 <template>
-  <nav class="navbar is-active" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nav-link class="navbar-item nico" to="/">
-        <h1 class="nico-title">Nico Tukiainen</h1>
-      </nav-link>      
+      <a class="navbar-item" href="/">
+        <img src="https://www.nicotukiainen.com/legacy/images/afps-logo.png">
+      </a>
       <a @click="isActive = !isActive"
-        :class="{'is-active': isActive}"
-        role="button"
-        class="navbar-burger burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+          :class="{'is-active': isActive}"
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div :class="{'is-active': isActive}"
-        id="navbarBasicExample"
-        class="navbar-menu">
-      <div class="navbar-start" @click="isActive = !isActive">
-        <nav-link to="/" class="navbar-item">
-          Home
-        </nav-link>
-        <nav-link to="/about" class="navbar-item">
-          About
-        </nav-link>
-        <nav-link to="/projects" class="navbar-item">
-          Projects
-        </nav-link>
-        <nav-link to="/blogs" class="navbar-item">
-          Ramblings
-        </nav-link>
-        <nav-link to="/contact" class="navbar-item">
-          Contact
-        </nav-link>
+    <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isActive}">
+      <div class="navbar-center">
+        <a class="navbar-item">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-rocket fa-lg"/></span>
+            <nav-link to="/">
+              Aloitus
+            </nav-link>
+          </div>
+        </a>
+        <a class="navbar-item">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-file-alt fa-lg"/></span>
+            <nav-link to="/">
+              Uutiset
+            </nav-link>
+          </div>
+        </a>
+        <a class="navbar-item">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-crosshairs fa-lg"/></span>
+            <nav-link to="/">
+              AFPS Finland?
+            </nav-link>
+          </div>
+        </a>
+        <a class="navbar-item">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-trophy fa-lg"/></span>
+            <nav-link to="/">
+              Turnaukset
+            </nav-link>
+          </div>
+        </a>
+          <template v-if="isAuth">
+          <figure class="image avatar is-48x48 m-r-sm">
+            <img class="is-rounded" :src="user.avatar">
+          </figure>
+          <div class="m-r-sm m-b-sm">
+            Tervetuloa {{user.username}}!
+          </div>
+          <button
+            v-if="isAdmin" class="button is-link is-outlined"
+            @click="() => $router.push('/administrator')">
+            Administrator
+          </button>
+          <a class="button is-primary" @click="logout">
+            Kirjaudu ulos
+          </a>
+        </template>
+        <template v-else>
+          <a class="navbar-item">
+          <div class="menu-item-container">
+              <span class="is-icon"><i class="fa fa-user-plus fa-lg"/></span>
+              <nav-link to="/register" id="login-signup">
+                Rekisteröidy
+              </nav-link>
+            </div>
+          </a>          
+          <a class="navbar-item">
+          <div class="menu-item-container">
+              <span class="is-icon"><i class="fa fa-sign-in-alt fa-lg"/></span>
+              <nav-link to="/login" id="login-signup">
+                Kirjaudu sisään
+              </nav-link>
+            </div>
+          </a>
+        </template>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav class="navbar is-active is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <nav-link class="navbar-item" to="/">
+          <h1 class="afps-title"><img src="https://www.nicotukiainen.com/legacy/images/afps-logo-1.png"></h1>
+        </nav-link>      
+        <a @click="isActive = !isActive"
+          :class="{'is-active': isActive}"
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div :class="{'is-active': isActive}"
+          id="navbarBasicExample"
+          class="navbar-menu">
+        <div class="navbar-start" @click="isActive = !isActive">
+          <nav-link to="/" class="navbar-item">
+            Aloitus
+          </nav-link>
+          <nav-link to="/about" class="navbar-item">
+            Uutiset
+          </nav-link>
+          <nav-link to="/projects" class="navbar-item">
+            AFPS Finland?
+          </nav-link>
+          <nav-link to="/blogs" class="navbar-item">
+            Turnaukset
+          </nav-link>
+          <nav-link to="/contact" class="navbar-item">
+            Yhteystiedot
+          </nav-link>
+        </div>
       </div>
 
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <!-- If Authenticated -->
             <template v-if="isAuth">
               <figure class="image avatar is-48x48 m-r-sm">
                 <img class="is-rounded" :src="user.avatar">
               </figure>
               <div class="m-r-sm m-b-sm">
-                Welcome {{user.username}}!
+                Tervetuloa {{user.username}}!
               </div>
-              <!-- If Admin -->
               <button
                 v-if="isAdmin" class="button is-link is-outlined"
                 @click="() => $router.push('/administrator')">
                 Administrator
               </button>
               <a class="button is-primary" @click="logout">
-                Logout
+                Kirjaudu ulos
               </a>
             </template>
-            <!-- <template v-else>
+            <template v-else>
               <nav-link to="/register" id="login-signup">
-                Sign up
+                Rekisteröidy
               </nav-link>
               <i class="fa fa-user" aria-hidden="true"/>
               <nav-link to="/login" id="login-signup">
-                Log in
+                Kirjaudu sisään
               </nav-link>
-            </template> -->
+            </template>
           </div>
         </div>
       </div>
-      
+
     </div>
-  </nav>
+  </nav> -->
 </template>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
 import { mapGetters } from 'vuex'
 export default {
   data() {
@@ -99,79 +206,79 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .navbar-brand {
-    background-color: #34495e;
-  }
-  .navbar-menu {
-    background: linear-gradient(to right, #34495e , #2c3e50);
-    align-items: center;
-  }
-  .brand-title {
-    font-size: 35px;
-    font-weight: bold;
-  }
-  .navbar-brand {
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
 
-    @media screen and (max-width: 1023px) {
-      padding-right: 0px;
+  .menu-item-container {
+    display: block;
+    text-align: center;
+    color: #87dbfc;
+    font-size: 24px;
+    font-family: 'East Sea Dokdo', cursive;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+    margin-top: 10px;
+
+    a {
+      color: #87dbfc;
+      text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    }
+
+    &:hover {
+      text-shadow:0px 0px 30px #f8e239;
+
+      a {
+        text-shadow:0px 0px 30px #f8e239;
+      }
+
+      .is-icon {
+        transform-origin: bottom left;
+        will-change: transform;
+        transform: rotate(-11deg);
+        // transition: 0.2s ease-in-out;
+      }
     }
   }
-  .navbar-item {
-    height: 3rem;
-    align-content: center;
-    color: #f39c12;
-
-      &:hover {
-        background-color: transparent;
-        color: #e67e22;
+  @media screen and (min-width: 1088px){
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background-color: transparent;
+    }
+    .navbar-center{
+      display:flex;
+      justify-content: stretch;
+      align-items: stretch;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-direction: row;
+    }
+    .navbar-link,.navbar-item{
+      align-items: center;
+      display: flex;
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 0;
+      justify-content: center;
+    }
+      .navbar-dropdown .navbar-item{
+        justify-content: center;
       }
   }
-  .navbar-item.is-active.nico {
-    border: 0 !important;
-    color: #f39c12 !important;
-    margin: 0 !important;
-  }
-  .nico-title {
-    font-size: 35px;
-    font-weight: bold;
-  }
-
-  .navbar-item.is-active {
-    color: #e67e22;
-    font-weight: normal;
-    background-color: transparent;
-  }
-  .burger {
-    color: #f39c12;
-  }
-  .avatar {
-    margin-right: 5px;
-  }
-  .fa-user {
-    padding-bottom: 8px;
-  }
-  #login-signup {    
-    color: #e67e22;
-    cursor: pointer;
-    justify-content: center;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    text-align: center;
-    white-space: nowrap;
-  }
-  @media screen and (max-width: 1024px) {
-    .navbar-menu {
-      align-items: center;
-    }
-    .navbar-item, .is-active {
-      text-align: center;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
+  @media screen and (min-width: 1088px) {
+    .is-icon {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 25px;
+      margin-bottom: .25em;
+      transform: rotate(0);
     }
   }
 </style>

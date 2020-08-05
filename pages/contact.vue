@@ -35,13 +35,11 @@
           </form>
           </div>
       </div>
-    </section>   
-  <Footer/>
+    </section>
   </div>
 </template>
 
 <script>
-import Footer from '~/components/shared/Footer'
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 export default {
   data: function() {
@@ -57,9 +55,6 @@ export default {
       },
       submitted: false
     };
-  },
-  components: {
-    Footer
   },
   methods: {
     // submit form handler
@@ -98,7 +93,7 @@ export default {
     }
   },
   head: {
-    title: 'Contact me | Nico Tukiainen'
+    title: 'AFPS Finland | Contact'
   }
 }
 </script>

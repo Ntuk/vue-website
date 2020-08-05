@@ -1,21 +1,18 @@
 <template>
   <div>
     <navbar />
+    <!-- <div
+      class="hero-img"
+      :style="{ background : `url(http://nicotukiainen.com/legacy/images/afps-first.jpg) no-repeat center center`}">
+    </div> -->
     <nuxt class="contents" />
-    <particles-bg 
-      type="cobweb"
-      color="#dce0e0"
-      num="120"
-      :bg="true" 
-    />
   </div>
 </template>
 <script>
-import AppFooter from '~/components/shared/Footer'
 import Navbar from '~/components/shared/Navbar'
 export default {
   components: {
-    Navbar, AppFooter
+    Navbar
   }
 }
 </script>
@@ -32,6 +29,16 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   height: 100% !important;
+}
+
+.hero-img {
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {

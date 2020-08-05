@@ -1,7 +1,7 @@
 {
-  "name": "nico-tukiainen-vue-website",
+  "name": "afps-finland",
   "version": "1.0.0",
-  "description": "Nico Tukiainen's personal website. I am a Software Engineer and a developer but my other interests include 3d modeling, user experience, web design and good food.",
+  "description": "Kohtauspaikka suomalaisille AFPS-pelaajille",
   "author": "Nico Tukiainen",
   "private": true,
   "scripts": {

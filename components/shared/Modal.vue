@@ -18,15 +18,6 @@
             <slot></slot>
           </div>
         </section>
-        <footer class="modal-card-foot">
-          <button
-            :disabled="isDisabled"
-            @click="emitAction"
-            class="button is-success">
-            {{actionTitle}}
-          </button>
-          <button @click="isOpen=false" class="button">Cancel</button>
-        </footer>
       </div>
     </div>
   </div>

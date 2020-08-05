@@ -18,18 +18,13 @@
         </div>
     </div>
     </section>
-  <Footer/>
   </div>
 </template>
 
 <script>
-import Footer from '~/components/shared/Footer'
 export default {
   head: {
-    title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
-  },
-  components: {
-    Footer
+    title: 'AFPS Finland - about'
   }
 }
 </script>

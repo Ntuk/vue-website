@@ -18,9 +18,6 @@
         {{project.subtitle | shortenText(45)}}
       </div>
     </div>
-    <footer class="card-footer">
-      <nuxt-link :to="`/projects/${project.slug}`" class="card-footer-item link">More Information</nuxt-link>
-    </footer>
   </div>
 </template>
 
