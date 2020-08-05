@@ -11,12 +11,6 @@
               <TypeEffect />
               <a href="#contents-of-index" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></a>
             </h1>
-          <!-- <h1 class="title">
-            {{title}}
-          </h1>
-          <h2 class="subtitle">
-            {{subtitle}}
-          </h2> -->
         </div>
       </div>
     </section>  
@@ -62,7 +56,7 @@ Vue.use(vueSmoothScroll)
   }
   .container {
     justify-content: center;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
