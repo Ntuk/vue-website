@@ -1,19 +1,18 @@
 <template>
-    <section
-      class="hero is-black is-medium">
-      <div class="hero-body">
-        <div
-          class="hero-img"
-          :style="{ background : `url(${image}) no-repeat center center`}">
-        </div>
-        <div class="container">
-            <h1 class="hero-header">
-              <TypeEffect />
-            <a href="#f-projects" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></a>
-            </h1>
-        </div>
+  <section class="hero is-black is-medium">
+    <div class="hero-body">
+      <div
+        class="hero-img"
+        :style="{ background : `url(${image}) no-repeat center center`}">
       </div>
-    </section>  
+      <div class="container">
+        <h1 class="hero-header">
+          <TypeEffect />
+          <a href="#f-projects" v-smooth-scroll="{ duration: 1000 }" class="width:100px;"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></a>
+        </h1>
+      </div>
+    </div>
+  </section>  
 </template>
 <script>
 import TypeEffect from './TypeEffect.vue'
@@ -70,10 +69,11 @@ Vue.use(vueSmoothScroll)
     flex-direction: column;
     i {
       text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-      color: #f39c12;
+      color: #f9c61a;
       &:hover {
+        color: #f39c12;
         cursor: pointer;
-      }
+      }      
     }
   }
   .hero-img {
@@ -99,6 +99,8 @@ Vue.use(vueSmoothScroll)
       right: 0px;
       bottom: -200px;
       left: 0px;
+      opacity: 0.6;
+      background: #000;
     }
   }
   .user-avatar {

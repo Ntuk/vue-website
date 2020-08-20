@@ -14,7 +14,7 @@ import { setTimeout } from 'timers';
       return {
         typeValue: '',
         typeStatus: false,
-        typeArray: ['Developer', 'Team player', 'Tech lover', 'Avid gamer', 'Food fanatic', 'Coder', 'Optimist'],
+        typeArray: ['Developer', 'Team player', 'Tech lover', 'Gamer', 'Food fanatic', 'Coder', 'Optimist'],
         typingSpeed: 100,
         erasingSpeed: 150,
         newTextDelay: 1500,
@@ -69,14 +69,14 @@ import { setTimeout } from 'timers';
 
   h1 {
     font-family: 'Shadows Into Light', cursive;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     font-size: 3rem;
     font-weight: normal;
 
     span.typed-text {      
       font-weight: bold;
-      color: #f39c12;
+      color: #f9c61a;
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
     }

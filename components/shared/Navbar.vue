@@ -2,7 +2,11 @@
   <nav class="navbar is-transparent change_color" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <h1 class="nico-title">Nico Tukiainen</h1>
+        <div class="wrapper" style="padding:1rem 1rem;margin:auto;">
+          <div class="card" style="height:50px;">
+            <h1 class="nico-title enclosed">Nico Tukiainen</h1>
+          </div>
+        </div>
       </a>
       <a @click="isActive = !isActive"
           :class="{'is-active': isActive}"
@@ -147,13 +151,12 @@ export default {
 }
 .navbar-item {
   .nico-title {
-    color: #f39c12;
+    color: #f9c61a;
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
     letter-spacing: 2px;
     font-weight: bold;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    padding-left: 2rem;
   }
 }
 .navbar-menu .is-active {
@@ -198,6 +201,59 @@ export default {
       transition: 0.3s;
     }
   }
+}
+.card {
+  border-radius: 5px;
+  grid-area: 1 / 1;
+  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: rgba(243, 156, 18, 0.88);
+  color: #000;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.card .enclosed {
+  background: #000;
+  color: rgba(249, 198, 26, 1);
+  padding: 0 0.5rem;
+  display: inline-block;
+  transform-origin: right center;
+}
+.wrapper {
+  position: relative;
+  perspective: 20em;
+  display: grid;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+}
+.wrapper:before {
+  border-radius: 5px;
+  --bw: 2px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #fff;
+  box-sizing: content-box;
+}
+
+.wrapper:hover > div,
+.wrapper:hover:before {
+  transform: none;
+}
+
+.wrapper > div,
+.wrapper:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
 }
 @media screen and (min-width: 1024px){
   .navbar {
