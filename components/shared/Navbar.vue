@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <div class="wrapper" style="padding:1rem 1rem;margin:auto;">
-          <div class="card" style="height:50px;">
+          <div class="card" style="height:50px;padding:30px;">
             <h1 class="nico-title enclosed">Nico Tukiainen</h1>
           </div>
         </div>
