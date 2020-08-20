@@ -367,7 +367,7 @@ background-color: rgba(189, 195, 199, 0.3);
   padding: 2rem;
   border-radius: 5px;
   grid-area: 1 / 1;
-  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  transform: translateX(-60px) rotateY(-10deg) rotateX(23deg) scale(1.03);
   background: rgba(243, 156, 18, 0.88);
   padding: 30px;
   color: #000;

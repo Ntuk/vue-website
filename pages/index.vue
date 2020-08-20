@@ -49,7 +49,7 @@
     <section class="section" id="f-footer">
       <div class="footer-container">
       <div class="footer-left-side" style="align-items:center;">
-        <p class="title">© Nico tukiainen 2020</p>
+        <p class="title">© Nico Tukiainen 2020</p>
       </div>
       <div class="footer-center">
         <WordCloud/>

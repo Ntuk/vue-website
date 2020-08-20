@@ -48,7 +48,7 @@ export default {
           "value": 16
         },
         {
-          "name": "Nico Tukiainen",
+          "name": "pc building",
           "value": 15
         },
         {
@@ -138,6 +138,26 @@ export default {
         {
           "name": "SQL",
           "value": 16
+        },
+        {
+          "name": "StencilJS",
+          "value": 24
+        },
+        {
+          "name": "Storybook",
+          "value": 20
+        },
+        {
+          "name": "Haaga-Helia",
+          "value": 17
+        },
+        {
+          "name": "Java",
+          "value": 13
+        },
+        {
+          "name": "Shadow DOM",
+          "value": 22
         }
       ]
     }
