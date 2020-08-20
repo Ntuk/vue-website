@@ -93,6 +93,7 @@ export default {
   border-radius: 5px;
   grid-area: 1 / 1;
   // transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  transform: translateX(-10px) rotateY(-1deg) rotateX(2deg) scale(1.03);
   background: rgba(243, 156, 18, 0.88);
   padding: 30px;
   color: #000;
@@ -135,7 +136,7 @@ export default {
   margin-top: calc(-1 * var(--bw));
   margin-left: calc(-1 * var(--bw));
   background: transparent;
-  transform: translateX(-60px) rotateY(-10deg) rotateX(5deg) scale(1.03);
+  transform: translateX(-10px) rotateY(-1deg) rotateX(2deg) scale(1.03);
   pointer-events: none;
   border: var(--bw) solid #000;
   box-sizing: content-box;
