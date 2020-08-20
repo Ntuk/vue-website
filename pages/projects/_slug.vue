@@ -104,12 +104,11 @@ export default {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 .subtitle {
-  color: rgba(249, 198, 26, 1);
+  color: #000;
   font-family: 'Shadows Into Light', cursive;
   font-size: 22px;
   letter-spacing: 4px;
   font-weight: bold;
-  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 .card {
   padding: 2rem;
