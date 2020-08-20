@@ -30,6 +30,14 @@ module.exports = {
       { src: 'https://widget.cloudinary.com/v2.0/global/all.js' },
     ]
   },
+  buildModules: [
+    [
+      '@nuxtjs/google-analytics', {
+        id: 'UA-155293168-2'
+      },
+      '@nuxtjs/vuetify',
+    ]
+  ],
   /*
   ** Customize the progress-bar color
   */
