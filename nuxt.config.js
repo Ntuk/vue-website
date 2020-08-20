@@ -84,7 +84,7 @@ module.exports = {
   },
   proxy: {
     '/products/': {
-      target: 'https://nicotukiainen.com/api/v1/',
+      target: 'https://www.nicotukiainen.com/api/v1/',
       changeOrigin: true
     }
   },
