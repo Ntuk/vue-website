@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Project Link</label>
+          <label class="label">Link to Github</label>
           <div class="control">
             <input
               :value="project.productLink"
@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Project Video Link</label>
+          <label class="label">Possible video link?</label>
           <div class="control">
             <input
               :value="project.promoVideoLink"

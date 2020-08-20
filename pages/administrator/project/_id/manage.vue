@@ -39,7 +39,7 @@
                     v-model="projectHero.subtitle"
                     class="input is-medium"
                     type="text"
-                    placeholder="Get all of the project for 9.99$">
+                    placeholder="Subtitle">
                 </div>
                 <div class="field">
                   <label class="label">Hero image</label>
@@ -73,14 +73,14 @@
                   <!-- display ProjectInfo -->
                   <a @click.prevent="navigateTo(1)"
                      :class="activeComponentClass(1)">
-                     Project Info
+                     Tech stack
                   </a>
                 </li>
                 <li>
                   <!-- display LandingPage -->
                   <a @click.prevent="navigateTo(2)"
                      :class="activeComponentClass(2)">
-                    Project Landing Page
+                    Major Info 
                   </a>
                 </li>
               </ul>

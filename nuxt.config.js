@@ -1,5 +1,6 @@
 
 module.exports = {
+  telemetry: false,
   mode: 'spa', // TODO: Change back to 'universal' when https://github.com/lindelof/particles-bg-vue/issues/6 is answered
   /*
   ** Headers of the page
@@ -25,7 +26,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/d33a83f69c.js' }
+      { src: 'https://kit.fontawesome.com/d33a83f69c.js' },
+      { src: 'https://widget.cloudinary.com/v2.0/global/all.js' },
     ]
   },
   /*

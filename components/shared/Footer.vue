@@ -39,21 +39,17 @@
 <style lang="scss">
   /* footer */
   .footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
-    align-self: flex-end;
     justify-content: center;
     align-items:  center;
-    background: rgb(52,73,94);
     background: radial-gradient(circle, rgba(52,73,94,1) 0%, rgba(44,62,80,1) 100%);
     padding: 20px 0;
     margin-top: 50px;
   }
   .icon {
     display: inline-flex;
-    // padding-left: 40px;
-    // padding-right: 40px;
     font-size: 25px;
 
     &:hover {

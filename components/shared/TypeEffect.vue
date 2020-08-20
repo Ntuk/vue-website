@@ -14,7 +14,7 @@ import { setTimeout } from 'timers';
       return {
         typeValue: '',
         typeStatus: false,
-        typeArray: ['Developer', 'Team player', 'Tech lover', 'Food fanatic', 'Optimist'],
+        typeArray: ['Developer', 'Team player', 'Tech lover', 'Avid gamer', 'Food fanatic', 'Coder', 'Optimist'],
         typingSpeed: 100,
         erasingSpeed: 150,
         newTextDelay: 1500,
@@ -68,12 +68,14 @@ import { setTimeout } from 'timers';
   }
 
   h1 {
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2px;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     font-size: 3rem;
     font-weight: normal;
 
-    span.typed-text {
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, sans-serif;
+    span.typed-text {      
+      font-weight: bold;
       color: #f39c12;
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;

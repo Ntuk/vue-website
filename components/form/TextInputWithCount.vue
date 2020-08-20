@@ -5,7 +5,7 @@
       @input="emitInputValue"
       @blur="v.$touch()"
       type="text"
-      placeholder="e.g. Amazing Project in Flutter!"
+      placeholder="Great project name!"
       class="input is-large">
     <span class="icon is small is-right">
       {{remainingLength}}

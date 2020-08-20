@@ -9,7 +9,7 @@
         <div class="container">
             <h1 class="hero-header">
               <TypeEffect />
-              <a href="#contents-of-index" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></a>
+            <a href="#f-projects" v-smooth-scroll="{ duration: 1000 }"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></a>
             </h1>
         </div>
       </div>
@@ -47,7 +47,7 @@ Vue.use(vueSmoothScroll)
 <style scoped lang="scss">
   .hero {
     width: 100vw;
-    height: 100vh; //fullscreen effect
+    height: 50vh;
     display: flex;
     justify-content: center;
   }
@@ -56,7 +56,7 @@ Vue.use(vueSmoothScroll)
   }
   .container {
     justify-content: center;
-    top: 40%;
+    margin-top: 20rem;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -66,7 +66,10 @@ Vue.use(vueSmoothScroll)
     font-size: 35px;
     font-weight: bold;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     i {
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
       color: #f39c12;
       &:hover {
         cursor: pointer;
@@ -74,7 +77,6 @@ Vue.use(vueSmoothScroll)
     }
   }
   .hero-img {
-    opacity: 0.4;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -84,6 +86,20 @@ Vue.use(vueSmoothScroll)
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
+    &::before {
+      content: "";
+      background: url(https://images.pexels.com/photos/167259/pexels-photo-167259.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center;
+      background-position: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: -200px;
+      left: 0px;
+    }
   }
   .user-avatar {
     display: inline-block;

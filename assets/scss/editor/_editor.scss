@@ -63,14 +63,21 @@
     }
 
     h1 {
+      color: rgba(249, 198, 26, 1);
+      font-family: 'Shadows Into Light', cursive;
       font-size: 40px;
+      letter-spacing: 3px;
       font-weight: bold;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     }
 
     h2 {
+      color: rgba(249, 198, 26, 1);
+      font-family: 'Shadows Into Light', cursive;
       font-size: 22px;
-      // font-weight: bold;
-      color: rgba(0,0,0,.54);
+      letter-spacing: 4px;
+      font-weight: bold;
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     }
 
     h3 {

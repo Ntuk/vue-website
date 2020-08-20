@@ -1,87 +1,107 @@
 <template>
-  <nav class="navbar is-active" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent change_color" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nav-link class="navbar-item nico" to="/">
+      <a class="navbar-item" href="/">
         <h1 class="nico-title">Nico Tukiainen</h1>
-      </nav-link>      
+      </a>
       <a @click="isActive = !isActive"
-        :class="{'is-active': isActive}"
-        role="button"
-        class="navbar-burger burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+          :class="{'is-active': isActive}"
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div :class="{'is-active': isActive}"
-        id="navbarBasicExample"
-        class="navbar-menu">
-      <div class="navbar-start" @click="isActive = !isActive">
-        <nav-link to="/" class="navbar-item">
-          Home
-        </nav-link>
-        <nav-link to="/about" class="navbar-item">
-          About
-        </nav-link>
-        <nav-link to="/projects" class="navbar-item">
-          Projects
-        </nav-link>
-        <nav-link to="/blogs" class="navbar-item">
-          Ramblings
-        </nav-link>
-        <nav-link to="/contact" class="navbar-item">
-          Contact
-        </nav-link>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <!-- If Authenticated -->
-            <template v-if="isAuth">
-              <figure class="image avatar is-48x48 m-r-sm">
-                <img class="is-rounded" :src="user.avatar">
-              </figure>
-              <div class="m-r-sm m-b-sm">
-                Welcome {{user.username}}!
-              </div>
-              <!-- If Admin -->
-              <button
-                v-if="isAdmin" class="button is-link is-outlined"
-                @click="() => $router.push('/administrator')">
-                Administrator
-              </button>
-              <a class="button is-primary" @click="logout">
-                Logout
-              </a>
-            </template>
-            <!-- <template v-else>
-              <nav-link to="/register" id="login-signup">
-                Sign up
-              </nav-link>
-              <i class="fa fa-user" aria-hidden="true"/>
-              <nav-link to="/login" id="login-signup">
-                Log in
-              </nav-link>
-            </template> -->
+    <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isActive}">
+      <div class="navbar-center">
+        <a class="navbar-item" href="/">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-home"/></span><a>Home</a>
           </div>
-        </div>
+        </a>
+        <a class="navbar-item" href="/about">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-address-card"/></span><a>About</a>
+          </div>
+        </a>
+        <a class="navbar-item" href="/projects">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-project-diagram"/></span><a>Projects</a>
+          </div>
+        </a>
+        <a class="navbar-item" href="/blogs">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-umbrella-beach"/></span><a>Ramblings</a>
+          </div>
+        </a>
+        <a class="navbar-item" href="/contact">
+          <div class="menu-item-container">
+            <span class="is-icon"><i class="fa fa-envelope"/></span><a>Contact</a>
+          </div>
+        </a>
+
+        <template v-if="isAuth">
+          <a class="navbar-item">
+            <figure class="image avatar is-48x48 m-r-sm">
+              <img class="is-rounded" :src="user.avatar">
+            </figure>
+            <div class="menu-item-container">
+              Welcome {{user.username}}!
+            </div>
+          </a>
+          <a v-if="isAdmin" class="navbar-item" @click="() => $router.push('/administrator')">
+            <div class="menu-item-container">
+              Administrator
+            </div>
+          </a>
+          <a class="navbar-item" @click="logout">
+            <div class="menu-item-container">
+              Log out
+            </div>
+          </a>
+        </template>
+        
       </div>
-      
     </div>
-  </nav>
+  </nav> 
 </template>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
 import { mapGetters } from 'vuex'
+import vueSmoothScroll from 'vue2-smooth-scroll'
+import Vue from 'vue'
+Vue.use(vueSmoothScroll)
 export default {
   data() {
     return {
-      isActive: false
+      isActive: false,
+      scrollPosition: null
     }
+  },
+  components: {
+    vueSmoothScroll
   },
   computed: {
     ...mapGetters({
@@ -93,87 +113,162 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('auth/logout').then(() => this.$router.push('/'))
+    },
+    updateScroll() {
+       this.scrollPosition = window.scrollY
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .navbar-brand {
-    background-color: #34495e;
-  }
-  .navbar-menu {
-    background: linear-gradient(to right, #34495e , #2c3e50);
-    align-items: center;
-  }
-  .brand-title {
-    font-size: 35px;
-    font-weight: bold;
-  }
-  .navbar-brand {
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');  
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  min-height: 6rem;
 
-    @media screen and (max-width: 1023px) {
-      padding-right: 0px;
+  .burger {
+    color: #87dbfc;
+    background: rgba(102, 112, 114, 0.3);
+    border-radius: 50% 0 0 50%;
+    font-weight: 800;
+    height: 7rem;
+
+    span {
+      width: 20px;
     }
   }
-  .navbar-item {
-    height: 3rem;
-    align-content: center;
-    color: #f39c12;
-
-      &:hover {
-        background-color: transparent;
-        color: #e67e22;
-      }
-  }
-  .navbar-item.is-active.nico {
-    border: 0 !important;
-    color: #f39c12 !important;
-    margin: 0 !important;
-  }
+}
+.navbar-item {
   .nico-title {
-    font-size: 35px;
+    color: #f39c12;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    letter-spacing: 2px;
     font-weight: bold;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    padding-left: 2rem;
+  }
+}
+.navbar-menu .is-active {
+  border-bottom: 1px solid black;
+}
+.transition {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.menu-item-container {
+  display: flex;
+  text-align: center;
+  margin-top: 0.2rem;
+  color: #f39c12;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+
+  a {
+    color: #f39c12;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    padding-left: 0.75rem;
   }
 
-  .navbar-item.is-active {
-    color: #e67e22;
-    font-weight: normal;
+  &:hover {
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    color: rgb(229, 244, 248);
+
+    a {
+      text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+      color: rgb(229, 244, 248);
+    }
+
+    .is-icon {
+      transform-origin: center;
+      will-change: transform;
+      transform: scale(1.2);
+      transition: 0.3s;
+    }
+  }
+}
+@media screen and (min-width: 1024px){
+  .navbar {
+    position: fixed;
+    width: 100%;
     background-color: transparent;
   }
-  .burger {
-    color: #f39c12;
+  .change_color {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(to top, #0000008c 5%, #1f1f1fd2 100%);
   }
-  .avatar {
-    margin-right: 5px;
+  .navbar-center{
+    display:flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-direction: row;
   }
-  .fa-user {
-    padding-bottom: 8px;
-  }
-  #login-signup {    
-    color: #e67e22;
-    cursor: pointer;
+  .navbar-link,.navbar-item{
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
     justify-content: center;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    text-align: center;
-    white-space: nowrap;
   }
-  @media screen and (max-width: 1024px) {
-    .navbar-menu {
-      align-items: center;
-    }
-    .navbar-item, .is-active {
-      text-align: center;
-    }
-    .buttons {
-      display: flex;
+    .navbar-dropdown .navbar-item{
       justify-content: center;
     }
+}
+@media screen and (min-width: 1024px) {
+  .is-icon {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    margin-bottom: .25em;
+    transform: rotate(0);
   }
+}
+@media screen and (min-width: 100px) and (max-width: 1023px){
+  .navbar {
+    min-height: 0;
+    max-height: 5rem;
+  }
+  .navbar-brand {
+    min-height: 2.5rem;
+    align-items: auto;
+  }
+  .navbar-item {
+    padding: 0;
+  }
+  .burger {
+    max-height: 5rem;
+  }
+  .navbar-menu {
+    background: rgba(102, 112, 114, 0.8);
+
+    .navbar-item {
+      padding: 0;
+      
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}
 </style>
 
 

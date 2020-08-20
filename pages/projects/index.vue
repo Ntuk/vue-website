@@ -2,32 +2,17 @@
   <div>
     <section class="section">
       <div class="container">
-        <h1 class="title">All Projects</h1>
-        <div class="columns is-multiline">
+        <h1 class="title">all projects - click a card for more info</h1>
+        <div class="rows is-multiline">
           <div
             v-for="project in projects"
             :key="project._id"
-            class="column is-one-quarter">
-            <!-- pass a project as a prop to project-card -->
-            <v-popover
-              offset="16"
-              trigger="hover"
-              placement="right-start">
-              <project-card :project="project"/>
-              <template slot="popover">
-                <project-card-tooltip
-                  :title="project.title"
-                  :subtitle="project.category.name"
-                  :description="project.subtitle"
-                  :wsl="project.wsl"
-                />
-              </template>
-            </v-popover>
+            class="row is-one-quarter">
+            <project-card :project="project"/>
           </div>
         </div>
       </div>
     </section>
-  <Footer/>
   </div>
 </template>
 
@@ -55,10 +40,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  // Home page
-  .section {
-    margin-bottom: 100px;
-  }
+.container {
+  padding-top: 14rem;
+}
+.title {
+color: #f39c12;
+font-family: 'Shadows Into Light', cursive;
+font-size: 30px;
+letter-spacing: 2px;
+font-weight: bold;
+text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
   .links {
     padding-top: 15px;
   }

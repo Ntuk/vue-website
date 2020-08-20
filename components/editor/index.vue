@@ -1,5 +1,6 @@
 <template>
   <div class="editor editor-squished">
+    <Modal ref="ytmodal"/>
     <basic-menu :editor="editor">
       <template #saveButton>
         <button
@@ -28,6 +29,7 @@ import {
   Bold,
   Code,
   Italic,
+  Link,
   Strike,
   Underline,
   History,
@@ -42,13 +44,16 @@ import {
 import Title from '~/components/editor/components/Title'
 import Subtitle from '~/components/editor/components/Subtitle'
 import Doc from '~/components/editor/components/Doc'
+import Iframe from "~/components/editor/components/Iframe"
+import Modal from "~/components/editor/Modal"
 import javascript from 'highlight.js/lib/languages/javascript'
 import css from 'highlight.js/lib/languages/css'
 export default {
   components: {
     EditorContent,
     BubbleMenu,
-    BasicMenu
+    BasicMenu,
+    Modal
   },
   props: {
     isSaving: {
@@ -72,19 +77,21 @@ export default {
           showOnlyCurrent: false,
           emptyNodeText: node => {
             if (node.type.name === 'title') {
-              return 'Inspirational Title'
+              return 'Title'
             }
             if (node.type.name === 'subtitle') {
-              return 'Some catchy subtitle'
+              return 'Subtitle'
             }
-            return 'Write your story...'
+            return 'Write your story here...'
           }
         }),
         new Heading({ levels: [1, 2, 3]}),
         new Image(),
+        new Iframe(),
         new Bold(),
         new Code(),
         new Italic(),
+        new Link(),
         new Strike(),
         new Underline(),
         new History(),
@@ -120,12 +127,6 @@ export default {
       
       return {content: html, title, subtitle}
     },
-    showImagePrompt(command) {
-      const src = prompt('Enter the url of your image here')
-      if (src !== null) {
-        command({ src })
-      }
-    },
     getNodeValueByName(name) {
       const docContent = this.editor.state.doc.content
       const nodes = docContent.content
@@ -134,11 +135,33 @@ export default {
 
       return node.textContent
     },
+    showLinkMenu(attrs) {
+      this.linkUrl = attrs.href
+      this.linkMenuIsActive = true
+      this.$nextTick(() => {
+        this.$refs.linkInput.focus()
+      })
+    },
+    hideLinkMenu() {
+      this.linkUrl = null
+      this.linkMenuIsActive = false
+    },
+    setLinkUrl(command, url) {
+      command({ href: url })
+      this.hideLinkMenu()
+    },
     setInitialContent(content) {
       this.editor.setContent(content)
     }
   }
 }
+  window.addEventListener("load", playerSizer);
+  window.addEventListener("resize", playerSizer);
+  function playerSizer() {
+    var player = document.getElementById("player");
+    var width = player.offsetWidth;
+    player.style.height = (width * 0.5625) + "px";
+  }
 </script>
 
 <style scoped lang="scss">
@@ -151,5 +174,22 @@ export default {
     &:disabled {
       cursor: not-allowed;
     }
+  }
+  .video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+  }
+  .video-container::after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+  }
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
   }
 </style>

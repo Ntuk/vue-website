@@ -5,7 +5,7 @@
     <particles-bg 
       type="cobweb"
       color="#dce0e0"
-      num="120"
+      num="30"
       :bg="true" 
     />
   </div>
@@ -32,6 +32,11 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   height: 100% !important;
+  background:
+    linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
+    radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
+    linear-gradient(to bottom right, rgba(52,73,94,1), rgba(52,73,94,1));
+  background-attachment: fixed;
 }
 
 body {

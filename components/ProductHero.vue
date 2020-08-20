@@ -7,20 +7,20 @@
       <div class="container">
         <div class="columns">
           <div class="column is-9">
-            <h1 class="title">
+            <h1 class="title" style="color: rgba(249, 198, 26, 1);">
               {{title}}
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle" style="color: rgba(249, 198, 26, 1);">
               {{subtitle}}
             </h2>
-            <div class="sub-subtitle">
+            <div class="sub-subtitle" style="color: rgba(249, 198, 26, 1);">
               <user-tile
                 :name="author.name"
                 :avatar="author.avatar" />
             </div>
           </div>
           <div class="column is-3">
-            <div class="column-right">
+            <div class="column-right" style="margin-top:-280px;">
               <slot></slot>
             </div>
           </div>
