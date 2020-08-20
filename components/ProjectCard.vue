@@ -22,7 +22,7 @@
       </div>
       <!-- More Info -->
       <footer class="card-content column is-one-quarter">
-        <nuxt-link :to="`/projects/${project.slug}`"><p class="subtitle" style="font-size:22px;color: #f39c12;">Tech used</p>
+        <nuxt-link :to="`/projects/${project.slug}`"><p class="subtitle" style="font-size:22px;color:#000;font-weight:bold;">Tech used</p>
             <p class="subtitle">
               <ul class="wsl-list">
                 <li
@@ -76,12 +76,11 @@ export default {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 .subtitle {
-  color: rgba(249, 198, 26, 1);
+  color: #000;
   font-family: 'Shadows Into Light', cursive;
   font-size: 22px;
   letter-spacing: 4px;
-  font-weight: bold;
-  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  font-weight: normal;
 }
 .card {
   padding: 2rem;

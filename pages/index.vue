@@ -15,7 +15,7 @@
           <h1 class="title" @click="$router.push(`/projects/`)"><a href="/projects" style="margin-left: 0.75rem;">All projects</a></h1>
         </div>
         <div class="rows">
-          <div            
+          <div
             v-for="project in projects.slice(0, 4)"
             :key="project._id" 
             class="row is-one-quarter"
