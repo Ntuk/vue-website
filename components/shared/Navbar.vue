@@ -35,7 +35,7 @@
         </a>
         <a class="navbar-item" href="/projects">
           <div class="menu-item-container">
-            <span class="is-icon"><i class="fa fa-project-diagram"/></span><a>Projects</a>
+            <span class="is-icon"><i class="fa fa-code"/></span><a>Projects</a>
           </div>
         </a>
         <a class="navbar-item" href="/blogs">

@@ -9,10 +9,13 @@
 
     <section class="section" id="f-projects">
       <div class="container">
-        <div class="is-flexible" style="justify-content:center;">
+        <div class="is-flexible" style="justify-content:center;padding:4rem 0;">
           <h1 class="title">
-            Latest projects <span class="is-icon"><i class="fa fa-project-diagram fa-xs" style="color:white;"/> </span> </h1>
-          <h1 class="title" @click="$router.push(`/projects/`)"><a href="/projects" style="margin-left: 0.75rem;">All projects</a></h1>
+            <span class="is-icon"><i class="fa fa-arrow-down fa-xs" style="color:white;"/></span>
+              showcasing four latest projects
+            <span class="is-icon"><i class="fa fa-code fa-xs" style="color:white;"/> </span>
+          </h1>
+          <h1 class="title" @click="$router.push(`/projects/`)"><a href="/projects" style="margin-left: 0.75rem;">check out all projects</a></h1>
         </div>
         <div class="rows">
           <div
@@ -28,10 +31,13 @@
 
     <section class="section"  id="f-ramblings">
       <div class="container">
-        <div class="is-flexible" style="justify-content:center;">
+        <div class="is-flexible" style="justify-content:center;padding-bottom:4rem;">
           <h1 class="title">
-            Latest ramblings <span class="is-icon"><i class="fa fa-umbrella-beach fa-xs" style="color:white;"/> </span> </h1>
-          <h1 class="title" @click="$router.push(`/blogs/`)"><a href="/blogs" style="margin-left: 0.75rem;">All ramblings</a></h1>
+            <span class="is-icon"><i class="fa fa-arrow-down fa-xs" style="color:white;padding-right:1rem;"/></span>
+              three featured ramblings
+            <span class="is-icon"><i class="fa fa-umbrella-beach fa-xs" style="color:white;"/> </span>
+          </h1>
+          <h1 class="title" @click="$router.push(`/blogs/`)"><a href="/blogs" style="margin-left: 0.75rem;">read all ramblings</a></h1>
         </div>
         <div class="columns">
           <div            
@@ -164,7 +170,6 @@ a {
   position: relative;
   top: 3rem;
   padding: 10rem 0;
-  // background: radial-gradient(circle, rgba(70,104,138,1) 0%, rgba(52,73,94,1) 100%);
   background:
     linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
     radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
