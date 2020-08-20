@@ -5,6 +5,11 @@
 @import "./editor/index";
 @import './pagination';
 
+
+.text {
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black !important;
+}
+
 .blog-editor-container {
   padding-top: 60px;
   

@@ -48,12 +48,13 @@
 
     <section class="section" id="f-footer">
       <div class="footer-container">
-      <div class="footer-left-side">
+      <div class="footer-left-side" style="align-items:center;">
         <p class="title">© Nico tukiainen 2020</p>
       </div>
       <div class="footer-center">
+        <WordCloud/>
       </div>
-      <div class="footer-right-side">
+      <div class="footer-right-side" style="align-items:center;">
         <div>
           <span class="icon">
             <a target="_" href="https://github.com/Ntuk"><i class="fab fa-github fa-lg" fa-rotate-270></i></a>
@@ -91,14 +92,15 @@ import ProjectCard from '~/components/ProjectCard'
 import ProjectCardTooltip from '~/components/ProjectCardTooltip'
 import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'
-import Footer from '~/components/shared/Footer'
+import WordCloud from '~/components/shared/WordCloud'
+import wordcloud from 'vue-wordcloud'
 import { mapState } from 'vuex'
 export default {
   head: {
     title: 'Nico Tukiainen'
   },
   components: {
-    ProjectCard, BlogCard, Hero, ProjectCardTooltip, Footer
+    ProjectCard, BlogCard, Hero, ProjectCardTooltip, WordCloud
   },
   computed: {
     ...mapState({
@@ -180,7 +182,6 @@ a {
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 #f-footer {
-  padding: 10rem 0;    
   background:
     linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
     radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
@@ -214,7 +215,6 @@ a {
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     padding-left: 0.75rem;
   }
-
   .icon {
     &:hover {
       text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
@@ -230,7 +230,6 @@ a {
     }
   }
 }
-
 .footer-custom {
     background-color: #0d0c0d;
     color: #fff;
