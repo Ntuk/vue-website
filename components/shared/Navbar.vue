@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <div class="wrapper" style="padding:1rem 1rem;margin:auto;">
-          <div class="card" style="height:50px;padding:30px;">
+          <div class="card" style="height:50px;">
             <h1 class="nico-title enclosed">Nico Tukiainen</h1>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default {
   }
 }
 .card {
-  border-radius: 5px;
+  border-radius: 0;
   grid-area: 1 / 1;
   transform: translateX(10px) rotateY(25deg) rotateX(10deg);
   background: rgba(243, 156, 18, 0.88);
@@ -213,6 +213,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 0.25rem !important;
 }
 .card .enclosed {
   background: #000;
@@ -226,7 +227,6 @@ export default {
   perspective: 20em;
   display: grid;
   transform-style: preserve-3d;
-  border-radius: 5px;
 }
 .wrapper:before {
   border-radius: 5px;
@@ -239,9 +239,9 @@ export default {
   margin-top: calc(-1 * var(--bw));
   margin-left: calc(-1 * var(--bw));
   background: transparent;
-  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  transform: translateX(-16px) rotateY(-30deg) rotateX(15deg) scale(1.03);
   pointer-events: none;
-  border: var(--bw) solid #fff;
+  border: var(--bw) solid rgba(249, 198, 26, 1);
   box-sizing: content-box;
 }
 
