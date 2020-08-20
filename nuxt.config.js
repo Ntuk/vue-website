@@ -72,6 +72,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     'portal-vue/nuxt',
     '@nuxtjs/style-resources'
   ],
