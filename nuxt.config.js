@@ -82,6 +82,12 @@ module.exports = {
   axios: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000'  
   },
+  proxy: {
+    '/products/': {
+      target: 'https://nicotukiainen.com/api/v1/',
+      changeOrigin: true
+    }
+  },
   serverMiddleware: [
     '~/server/routes/index'
   ],
