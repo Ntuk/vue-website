@@ -17,8 +17,8 @@
           <div class="section">
           </div>
           <div class="section project-description p-t-none">
-            <div class="wrapper" style="padding-top:0;">
-              <div class="card">
+            <div style="padding-top:0;" class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+              <div class="card" :class="{'transformation' : pageLoaded }">
               <div class="title enclosed">
                 Tech stack
               </div>
@@ -46,6 +46,20 @@
 import ProductHero from '~/components/ProductHero'
 import ProductHeroCard from '~/components/ProductHeroCard'
 export default {
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  methods: {
+    loadPage() {      
+      this.pageLoaded = true
+    }
+  },
+  mounted() {
+    this.loadPage()
+    console.log(this.pageLoaded);
+  },
   head() {
     return {
       title: this.project.title,
@@ -114,7 +128,6 @@ export default {
   padding: 2rem;
   border-radius: 5px;
   grid-area: 1 / 1;
-  // transform: translateX(10px) rotateY(25deg) rotateX(10deg);
   transform: translateX(-60px) rotateY(-10deg) rotateX(5deg) scale(1.03);
   background: rgba(243, 156, 18, 0.88);
   padding: 30px;
@@ -156,7 +169,7 @@ export default {
   margin-top: calc(-1 * var(--bw));
   margin-left: calc(-1 * var(--bw));
   background: transparent;
-  transform: translateX(-60px) rotateY(-10deg) rotateX(5deg) scale(1.03);
+  transform: translateY(-460px) rotateY(90deg) rotateX(-160deg) scale(1.03);
   pointer-events: none;
   border: var(--bw) solid #000;
   box-sizing: content-box;
@@ -170,7 +183,7 @@ export default {
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 2.3s transform cubic-bezier(.25,.46,.45,1);
 }
   .project-description {
     &-title {
@@ -195,4 +208,13 @@ export default {
       }
     }
   }
+
+.transformation {
+  transform: none !important;
+}
+.wrapper-transformation {
+  &::before {
+    transform: none !important;
+  }
+}
 </style>

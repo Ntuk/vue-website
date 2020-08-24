@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper">
-    <div class="card">
+  <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+    <div class="card" :class="{'transformation' : pageLoaded }">
       <div class="blog-editor-container">
         <div class="blog-section-user">
           <user-tile
@@ -19,6 +19,19 @@
 import UserTile from '~/components/shared/UserTile'
 import EditorView from '~/components/editor/EditorView'
 export default {
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  methods: {
+    loadPage() {      
+      this.pageLoaded = true
+    }
+  },
+  mounted() {
+    this.loadPage()
+  },
   head() {
     return {
       title: this.blog.title,
@@ -136,7 +149,7 @@ export default {
   margin-top: calc(-1 * var(--bw));
   margin-left: calc(-1 * var(--bw));
   background: transparent;
-  transform: translateX(-10px) rotateY(-1deg) rotateX(2deg) scale(1.03);
+  transform: translateX(-10px) rotateY(-165deg) rotateX(-22deg) scale(1.03);
   pointer-events: none;
   border: var(--bw) solid #000;
   box-sizing: content-box;
@@ -150,7 +163,16 @@ export default {
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 2.3s transform cubic-bezier(.25,.46,.45,1);
+}
+
+.transformation {
+  transform: none !important;
+}
+.wrapper-transformation {
+  &::before {
+    transform: none !important;
+  }
 }
 
 </style>

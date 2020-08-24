@@ -3,8 +3,8 @@
     <section class="section">
       <div class="contact-page">
         <p class="title">get in touch</p>
-        <div class="wrapper">
-          <div class="card">
+        <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+          <div class="card" :class="{'transformation' : pageLoaded }">
             <div class="is-flexible">
               <h4 class="title enclosed">through either social media..</h4>
               <div>
@@ -84,6 +84,7 @@ var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]
 export default {
   data: function() {
     return {
+      pageLoaded: false,
       name: '',
       email: {
         value: '',
@@ -100,6 +101,9 @@ export default {
     Footer
   },
   methods: {
+    loadPage() {      
+      this.pageLoaded = true
+    },
     // submit form handler
     submit: function() {
       this.submitted = true;
@@ -128,6 +132,9 @@ export default {
     checkAll: function(event) {
       this.selection.features = event.target.checked ? this.features : [];
     }
+  },
+  mounted() {
+    this.loadPage()
   },
   watch: {
     // watching nested property
@@ -259,7 +266,7 @@ export default {
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 2.8s transform cubic-bezier(.25,.46,.45,1);
 }
 .is-flexible {
   display: inline-flex;
@@ -421,6 +428,15 @@ header h1 {
   }
   50% {
     transform: scale(0.8);
+  }
+}
+
+.transformation {
+  transform: none !important;
+}
+.wrapper-transformation {
+  &::before {
+    transform: none !important;
   }
 }
 </style>

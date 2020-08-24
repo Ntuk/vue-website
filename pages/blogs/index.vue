@@ -3,8 +3,8 @@
     <section class="section">
       <div class="blogs-page">
         <p class="title" style="text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;color: #f39c12;padding-bottom:2rem;">ramblings of a madman</p>
-        <div class="wrapper">
-          <div class="card">
+        <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+          <div class="card" :class="{'transformation' : pageLoaded }">
             <div class="columns is-mobile">
               <!-- posts -->
               <div class="column is-8">
@@ -76,6 +76,14 @@
 import { mapState } from 'vuex'
 import Footer from '~/components/shared/Footer'
 export default {
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  mounted() {
+    this.loadPage()
+  },
   head: {
     title: 'Ramblings | Nico Tukiainen'
   },
@@ -125,6 +133,9 @@ export default {
       // Here store the query params!
       this.$store.dispatch('blog/fetchBlogs', filter)
         .then(_ => this.setQueryPaginationParams())
+    },
+    loadPage() {      
+      this.pageLoaded = true
     }
   }
 }
@@ -423,7 +434,7 @@ background-color: rgba(189, 195, 199, 0.3);
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 2.3s transform cubic-bezier(.25,.46,.45,1);
 }
 @media screen and (max-width: 314px) {
   .container {
@@ -453,6 +464,15 @@ background-color: rgba(189, 195, 199, 0.3);
   }
   .column.is-8 {
     width: 100% !important;
+  }
+}
+
+.transformation {
+  transform: none !important;
+}
+.wrapper-transformation {
+  &::before {
+    transform: none !important;
   }
 }
 </style>

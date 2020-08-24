@@ -2,12 +2,12 @@
   <section class="section">
     <div class="about-page">
       <p class="title">little bit about me</p>
-      <div class="wrapper">
-        <div class="card">
+      <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+        <div class="card" :class="{'transformation' : pageLoaded }">
           <figure class="avatar">
             <img src="https://nicotukiainen.com/legacy/images/portrait2.jpg">
           </figure>
-          <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a href="https://www.pagero.com/">pagero.com</a>.
+          <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a target="_blank" href="https://www.pagero.com/">pagero.com</a>.
           <hr/>
           <p>I have only been working in the IT since October 2018 and before that I worked in the restaurant industry for 13 years. I am still quite novice but I'm lucky enough to be working with a team of very skilled and helpful Developers / Engineers. 
           Throughout my life, I have acquired advanced technical knowledge and that has helped me adapt to these new challenges.
@@ -23,13 +23,26 @@
 </template>
 
 <script>
-import Footer from '~/components/shared/Footer'
+import Ow from '~/components/Ow'
 export default {
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  methods: {
+    loadPage() {      
+      this.pageLoaded = true
+    }
+  },
+  mounted() {
+    this.loadPage()
+  },
   head: {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Footer
+    Ow
   }
 }
 </script>
@@ -69,33 +82,6 @@ export default {
   font-weight: bold;
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
-.card {
-  padding: 2rem;
-  border-radius: 5px;
-  grid-area: 1 / 1;
-  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-  background: rgba(243, 156, 18, 0.88);
-  padding: 30px;
-  color: #000;
-  backface-visibility: hidden;
-  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
-
-  a {
-    color: #12e4f3;
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 22px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-  }
-
-  &:hover {
-    .avatar img {
-      filter: grayscale(0%);
-      transition: 1.5s;
-    }
-  }
-}
 .avatar {
   margin-right: 20px;
   float: left;
@@ -109,6 +95,26 @@ export default {
 }
 
 //flip
+.card {
+  padding: 2rem;
+  border-radius: 5px;
+  grid-area: 1 / 1;
+  background: rgba(243, 156, 18, 0.88);
+  padding: 30px;
+  color: #000;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+  transform: translateX(16px) rotateY(32deg) rotateX(18deg);
+
+  a {
+    color: #12e4f3;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  }
+}
 .wrapper {
   position: relative;
   perspective: 80em;
@@ -150,7 +156,20 @@ export default {
 .wrapper > div,
 .wrapper:before {
   will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  transition: 1.6s transform cubic-bezier(.25,.46,.45,1);
+}
+
+.transformation {
+  transform: none !important;
+    .avatar img {
+      filter: grayscale(0%);
+      transition: 5s;
+    }
+}
+.wrapper-transformation {
+  &::before {
+    transform: none !important;
+  }
 }
 
 </style>
