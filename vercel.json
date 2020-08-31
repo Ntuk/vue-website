@@ -2,5 +2,21 @@
   "version": 2,
   "alias": ["nicotukiainen.com", "www.nicotukiainen.com"],
   "build": {
-  }
+    "env": {
+      "EXPRESS_PORT": "3000",
+      "MONGODB_URI": "some_url",
+      "JWT_SECRETE": "a_secret_:_)"
+    }
+  },
+  "env": {
+    "EXPRESS_PORT": "3000",
+    "MONGODB_URI": "some_url",
+      "JWT_SECRETE": "a_secret_:_)"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
+  ]
 }
