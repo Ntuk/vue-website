@@ -1,14 +1,6 @@
 {
   "version": 2,
   "alias": ["nicotukiainen.com", "www.nicotukiainen.com"],
-  "build": {
-    "env": {
-      "MONGODB_URI": "process.env.MONGODB_URI"
-    }
-  },
-  "env": {
-    "MONGODB_URI": "process.env.MONGODB_URI"
-  },
   "routes": [
     {
       "src": "/(.*)",
