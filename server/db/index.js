@@ -23,7 +23,7 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
-  console.log(('keys: ', keys.MONGODB_URI);
+  console.log('keys: ', keys.MONGODB_URI);
   console.log('process.env: ', process.env.MONGODB_URI);
   return mongoose.connect(process.env.MONGODB_URI, { 
         useNewUrlParser: true, 
