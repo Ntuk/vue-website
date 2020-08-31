@@ -2,13 +2,5 @@
   "version": 2,
   "alias": ["nicotukiainen.com", "www.nicotukiainen.com"],
   "build": {
-    "env": {
-      "MONGODB_URI": "process.env.MONGODB_URI",
-      "SESSION_SECRET": "process.env.SESSION_SECRET",
-      "NODE_ENV": "production",
-      "DOMAIN": "process.env.DOMAIN",
-      "BASE_URL": "process.env.BASE_URL",
-      "HOST": "0.0.0.0"
-    }
   }
 }
