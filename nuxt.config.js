@@ -86,7 +86,7 @@ module.exports = {
   },
   proxy: {
     '/products/': {
-      target: `${process.env.BASE_URL}/api/v1/`,
+      target: 'https://nicotukiainen.com/api/v1/',
       changeOrigin: true
     }
   },
