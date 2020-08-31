@@ -3,15 +3,11 @@
   "alias": ["nicotukiainen.com", "www.nicotukiainen.com"],
   "build": {
     "env": {
-      "EXPRESS_PORT": "3000",
-      "MONGODB_URI": "some_url",
-      "JWT_SECRETE": "a_secret_:_)"
+      "MONGODB_URI": "process.env.MONGODB_URI"
     }
   },
   "env": {
-    "EXPRESS_PORT": "3000",
-    "MONGODB_URI": "some_url",
-      "JWT_SECRETE": "a_secret_:_)"
+    "MONGODB_URI": "process.env.MONGODB_URI"
   },
   "routes": [
     {
