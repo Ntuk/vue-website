@@ -1,7 +1,7 @@
 
 module.exports = {
   telemetry: false,
-  mode: 'universal', // TODO: Change back to 'universal' when https://github.com/lindelof/particles-bg-vue/issues/6 is answered
+  mode: 'spa', // TODO: Change back to 'universal' when https://github.com/lindelof/particles-bg-vue/issues/6 is answered
   /*
   ** Headers of the page
   */
