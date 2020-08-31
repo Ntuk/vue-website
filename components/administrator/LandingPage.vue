@@ -24,7 +24,7 @@
               @input="($event) => emitProjectValue($event, 'subtitle')"
               class="input is-medium"
               type="text"
-              placeholder="OCTOBER 24, 2017">
+              placeholder="October 24, 2017">
           </div>
         </div>
         <div class="field">

@@ -1,7 +1,7 @@
 <template>
   <div class="project-create-wrapper">
     <div class="project-create-headerText">
-      What category best fits the knowledge you'll share?
+      What category best fits the project best?
     </div>
     <h2 class="project-create-subtitle">If you're not sure about the right category, you can change it later.</h2>
     <form class="project-create-form">
