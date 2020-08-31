@@ -23,7 +23,9 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
-  return mongoose.connect(keys.MONGODB_URI, { 
+  console.log(('keys: ', keys.MONGODB_URI);
+  console.log('process.env: ', process.env.MONGODB_URI);
+  return mongoose.connect(process.env.MONGODB_URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useCreateIndex: true
