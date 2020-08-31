@@ -86,7 +86,7 @@ module.exports = {
   },
   proxy: {
     '/products/': {
-      target: `${BASE_URL}/api/v1/`,
+      target: `${process.env.BASE_URL}/api/v1/`,
       changeOrigin: true
     }
   },
