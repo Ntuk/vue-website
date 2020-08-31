@@ -3,6 +3,7 @@ const keys = require('../keys');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
+require("dotenv").config();
 require("../models/user");
 require("../models/product");
 require("../models/category");
