@@ -1,14 +1,4 @@
 {
   "name": "ntuk",
-  "version": 2,
-  "build": {
-    "env": {
-      "MONGODB_URI": "@process.env.MONGODB_URI",
-      "BASE_URL": "@process.env.BASE_URL",
-      "DOMAIN": "@process.env.DOMAIN",
-      "HOST": "@HOST",
-      "NODE_ENV": "@process.env.NODE_ENV",
-      "SESSION_SECRET": "@process.env.SESSION_SECRET"
-    }
-  }
+  "version": 2
 }
