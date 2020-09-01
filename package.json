@@ -1,7 +1,7 @@
 {
   "name": "nico-tukiainen-vue-website",
   "version": "1.0.0",
-  "description": "Nico Tukiainen's personal website. I am a Software Engineer and a developer but my other interests include 3d modeling, user experience, web design and good food.",
+  "description": "Nico Tukiainen's personal website. I am a Software developer but my other interests include 3d modeling, user experience, web design and good food.",
   "author": "Nico Tukiainen",
   "private": true,
   "scripts": {
