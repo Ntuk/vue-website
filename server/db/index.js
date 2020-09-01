@@ -22,7 +22,7 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
-  return mongoose.createConnection(keys.MONGODB_URI, { 
+  return mongoose.connect(keys.MONGODB_URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useCreateIndex: true
