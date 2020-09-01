@@ -2,6 +2,11 @@
   "name": "ntuk",
   "version": 2,
   "env": {
-    "MONGODB_URI": "process.env.MONGODB_URI"
+    "MONGODB_URI": "@process.env.MONGODB_URI",
+    "BASE_URL": "@https://nicotukiainen.com",
+    "DOMAIN": "@.nicotukiainen.com",
+    "HOST": "@0.0.0.0",
+    "NODE_ENV": "@production",
+    "SESSION_SECRET": "@fsafasf98asfasf8^421412849ha"
   }
 }
