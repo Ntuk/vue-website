@@ -102,5 +102,5 @@ module.exports = {
     */
     extend(config, ctx) {
     }
-  }
+  },
 }

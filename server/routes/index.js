@@ -41,7 +41,7 @@ if (process.env.NODE_ENV == 'production') {
   sess.cookie.secure = true;
   sess.cookie.httpOnly = true;
   sess.cookie.sameSite = false;
-  sess.cookie.domain = process.env.DOMAIN // .yourdomain.com
+  sess.cookie.domain = process.env.DOMAIN
 }
 
 app.use(session(sess));
