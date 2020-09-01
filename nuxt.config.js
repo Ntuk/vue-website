@@ -13,10 +13,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { hid: 'og:title', name: 'og:title', content: 'Nico Tukiainen | Software Developer' },
       { hid: 'og:locale', name: 'og:locale', content: 'en_EU' },
-      { hid: 'og:url', name: 'og:url', content: process.env.BASE_URL || 'https://localhost:3000' },
+      { hid: 'og:url', name: 'og:url', content: process.env.BASE_URL || 'http://localhost:3000' },
       { hid: 'og:type', name: 'og:type', content: 'website' },
       { hid: 'og:image', name: 'og:image', content: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80' },
-      { hid: 'og:description', name: 'og:description', content: 'My name is Nico Tukiainen and I am a software developer.' },
+      { hid: 'og:description', name: 'og:description', content: 'My name is Nico Tukiainen and I am a software engineer and developer.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
