@@ -12,8 +12,7 @@ require("../models/contact");
 
 exports.initSessionStore = function() {
   const store = new MongoDBStore({
-    uri: process.env.URI,
-    collection: 'eincodeSessions'
+    uri: keys.MONGODB_URI,
   })
 
   store.on('error', (error) => console.log(error))
@@ -22,7 +21,7 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
-  return mongoose.connect(process.env.URI, { 
+  return mongoose.connect(keys.MONGODB_URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useCreateIndex: true
