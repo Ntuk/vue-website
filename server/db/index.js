@@ -22,6 +22,7 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
+  console.log(keys.URI);
   return mongoose.connect(keys.URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
