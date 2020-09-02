@@ -75,7 +75,7 @@ module.exports = {
     '@nuxtjs/proxy',
     'portal-vue/nuxt',
     '@nuxtjs/style-resources',
-    '~/server/routes'
+    '~/modules/api'
   ],
   /*
   ** Axios module configuration
