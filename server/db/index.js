@@ -12,7 +12,7 @@ require("../models/contact");
 
 exports.initSessionStore = function() {
   const store = new MongoDBStore({
-    uri: 'mongodb+srv://nicotukiainen:J3dinpaluu@cluster0-siwa6.mongodb.net/nico-db?retryWrites=true&w=majority',
+    uri: keys.MONGODB_URI,
     collection: 'eincodeSessions'
   })
 
@@ -22,7 +22,7 @@ exports.initSessionStore = function() {
 }
 
 exports.connect = function() {
-  return mongoose.connect('mongodb+srv://nicotukiainen:J3dinpaluu@cluster0-siwa6.mongodb.net/nico-db?retryWrites=true&w=majority', { 
+  return mongoose.connect(keys.MONGODB_URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useCreateIndex: true

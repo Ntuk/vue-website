@@ -1,4 +1,4 @@
 module.exports = {
-  URI: 'mongodb+srv://nicotukiainen:J3dinpaluu@cluster0-siwa6.mongodb.net/nico-db?retryWrites=true&w=majority',
+  URI: process.env.MONGODB_URI,
   SESSION_SECRET: process.env.SESSION_SECRET
 }
