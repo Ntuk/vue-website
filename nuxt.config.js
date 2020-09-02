@@ -74,7 +74,8 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     'portal-vue/nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '~/server/routes'
   ],
   /*
   ** Axios module configuration
@@ -90,9 +91,6 @@ module.exports = {
       changeOrigin: true
     }
   },
-  serverMiddleware: [
-    '~/server/routes/index'
-  ],
   /*
   ** Build configuration
   */
