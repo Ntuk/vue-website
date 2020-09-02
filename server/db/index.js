@@ -13,6 +13,7 @@ require("../models/contact");
 exports.initSessionStore = function() {
   const store = new MongoDBStore({
     uri: keys.MONGODB_URI,
+    collection: 'eincodeSessions'
   })
 
   store.on('error', (error) => console.log(error))
