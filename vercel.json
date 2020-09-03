@@ -1,3 +1,11 @@
 {
-  "version": 2
+  "version": 2,
+  "env": {
+    "URI": "mongodb+srv://nicotukiainen:J3dinpaluu@cluster0.siwa6.mongodb.net/nico-db?retryWrites=true&w=majority"
+  },
+  "build": {
+    "env": {
+      "URI": "mongodb+srv://nicotukiainen:J3dinpaluu@cluster0.siwa6.mongodb.net/nico-db?retryWrites=true&w=majority"
+    }
+  }
 }
