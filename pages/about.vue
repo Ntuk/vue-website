@@ -1,8 +1,9 @@
 <template>
   <section class="section">
     <div class="about-page">
-      <p class="title">little bit about me</p>
-      <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+      <p class="title" v-if="!statsPage">little bit about me</p>
+      <p class="title" v-if="statsPage">my gaming stats!</p>
+      <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }" v-if="!statsPage">
         <div class="card" :class="{'transformation' : pageLoaded }">
           <figure class="avatar">
             <img src="https://nicotukiainen.com/legacy/images/portrait2.jpg">
@@ -16,24 +17,41 @@
           <p>I also get excited about things easily, especially about technology. My long-term interests include programming, web design, 3d modeling, user experience, good food, martial arts, travelling, music and aforementioned PC gaming. I also enjoy an occasional craft beer or two every now and then.</p>
           <hr/>
           <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
+          <hr/>
+          <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a>
         </div>
       </div>
+
+      <div class="wrapper" :class="{'wrapper-transformation' : statsPage }" v-if="statsPage">
+        <div class="card" :class="{'transformation' : statsPage }">
+          <figure class="avatar">
+            <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
+          </figure>
+          <p>As mentioned earlier on the About-page, gaming is a dear hobby for me. Here I have collected some data from some of the games I have played over the years.
+          <hr/>
+          <Wow/>
+          <hr/>
+          <a href="#" v-on:click='statsPage = !statsPage'>Click here to get back to "About Nico" -page</a>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
 
 <script>
-import Ow from '~/components/Ow'
+import Wow from '~/components/games/Wow'
 export default {
   data() {
     return {
       pageLoaded: false,
+      statsPage: false,
     }
   },
   methods: {
     loadPage() {      
       this.pageLoaded = true
-    }
+    },
   },
   mounted() {
     this.loadPage()
@@ -42,7 +60,7 @@ export default {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Ow
+    Wow
   }
 }
 </script>
