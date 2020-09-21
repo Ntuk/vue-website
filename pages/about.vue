@@ -30,6 +30,7 @@
           <p>As mentioned earlier on the About-page, gaming is a dear hobby for me. Here I have collected some data from some of the games I have played over the years.
           <hr/>
           <Wow/>
+          <DiabloIII/>
           <hr/>
           <a href="#" v-on:click='statsPage = !statsPage'>Click here to get back to "About Nico" -page</a>
         </div>
@@ -41,6 +42,7 @@
 
 <script>
 import Wow from '~/components/games/Wow'
+import DiabloIII from '~/components/games/DiabloIII'
 export default {
   data() {
     return {
@@ -60,7 +62,7 @@ export default {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Wow
+    Wow, DiabloIII
   }
 }
 </script>

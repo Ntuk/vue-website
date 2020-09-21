@@ -1,8 +1,6 @@
 <template>
-    <div style="width:100%;">
+    <div style="width:100%;margin-bottom: 4rem;">
       <p class="game-title">World of Warcraft</p>
-      <br/>
-      <br/>
       <div style="margin-bottom: 1.5rem;">A list of World of Warcraft characters in my account, accumulated over 12 years of playing. My /played time in total is about 8200 hours, which is roughly 324 days. You can find more info from Armory links provided for each character.</div>
       <div class="columns table-divs">
         <!-- <div class="column headers is-1"><p>Image</p></div> -->
@@ -159,10 +157,11 @@ export default {
     background: #000;
     color: #f9c61a;
     padding: 0 0.5rem;
+    margin-bottom: 2rem;
     display: inline-block;
     transform-origin: right center;    
     font-family: 'Shadows Into Light', cursive;
-    font-size: 22px;
+    font-size: 30px;
     letter-spacing: 2px;
     font-weight: bold;
   }
