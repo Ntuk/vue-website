@@ -11,36 +11,30 @@
         :image="project.image" 
       />
     </product-hero>
-    <div class="container">
       <div class="columns">
-        <div class="column is-9">
-          <div class="section">
-          </div>
-          <div class="section project-description p-t-none">
-            <div style="padding-top:0;" class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
+        <div class="column is-10">
+            <div style="padding-top: 4rem;" class="wrapper" :class="{'wrapper-transformation' : pageLoaded }">
               <div class="card" :class="{'transformation' : pageLoaded }">
-              <div class="title enclosed">
-                Tech stack
-              </div>
-              <ul class="subtitle">
-                <li
-                   v-for="wsl in project.wsl"
-                   :key="wsl.value"
-                   class="what-you-get-item">
-                  <span>{{wsl.value}}</span>
-                </li>
-              </ul>
+                <div class="title enclosed">
+                  Tech stack
+                </div>
+                <ul class="subtitle">
+                  <li
+                    v-for="wsl in project.wsl"
+                    :key="wsl.value"
+                    class="what-you-get-item">
+                    <span>{{wsl.value}}</span>
+                  </li>
+                </ul>
                 <div class="title enclosed" style="margin-top:1rem;">Project Info</div>
                 <div class="project-description-details">
                   <div v-html="project.description"></div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
 import ProductHero from '~/components/ProductHero'
@@ -58,7 +52,6 @@ export default {
   },
   mounted() {
     this.loadPage()
-    console.log(this.pageLoaded);
   },
   head() {
     return {

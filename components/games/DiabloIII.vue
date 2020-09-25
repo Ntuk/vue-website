@@ -1,9 +1,12 @@
 <template>
-    <div style="width:100%;">
-      <p class="game-title">Diablo III</p>
+    <div style="width:100%;margin-bottom: 4rem;">
+      <!-- <p class="game-title">Diablo III</p> -->
+      <div style="text-align:center">
+        <img src="https://bnetproduct-a.akamaihd.net//fff/155c60a0322ae5402f8cbae3c4108297-diablo-III-base-1000x700.png" class="gamelogo"/>
+      </div>
       <br/>
       <br/>
-      <div style="margin-bottom: 1.5rem;">List of Diablo III heroes in my account, accumulated since the game launched in 2012. It's been quite quiet lately though.</div>
+      <div style="margin-bottom: 1.5rem;margin-top: -3rem;">List of Diablo III heroes in my account, accumulated since the game launched in 2012. It's been quite quiet lately though.</div>
       <div class="columns table-divs">
         <div class="column headers is-2"><p>Name</p></div>
         <div class="column headers is-2"><p>Class</p></div>
@@ -53,11 +56,10 @@ export default {
   },
   methods: {
     getProfileData() {
-      const token = "USJH5YJvhY3CgsutRky4GsnBsVolsuyNqP";
+      const token = "USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq";
       const apiUrl=`https://eu.api.blizzard.com/d3/profile/Nightfrost%232688/?locale=en_GB&access_token=${token}`;      
       return this.$axios.$get(apiUrl)
       .then(res => {
-        console.log(res);
         this.wideResults = res;
         this.results = res.heroes.map(c => c);
       })
@@ -80,6 +82,9 @@ export default {
     font-size: 30px;
     letter-spacing: 2px;
     font-weight: bold;
+  }
+  .gamelogo {
+    height: 150px;
   }
   .game-data {
     p {

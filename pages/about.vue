@@ -6,7 +6,7 @@
       <div class="wrapper" :class="{'wrapper-transformation' : pageLoaded }" v-if="!statsPage">
         <div class="card" :class="{'transformation' : pageLoaded }">
           <figure class="avatar">
-            <img src="https://nicotukiainen.com/legacy/images/portrait2.jpg">
+            <img src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948724/legacy/portrait2_o3qkvu.jpg">
           </figure>
           <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a target="_blank" href="https://www.pagero.com/">pagero.com</a>.
           <hr/>
@@ -18,19 +18,22 @@
           <hr/>
           <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
           <hr/>
-          <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a>
+          <!-- <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a> -->
         </div>
       </div>
 
       <div class="wrapper" :class="{'wrapper-transformation' : statsPage }" v-if="statsPage">
         <div class="card" :class="{'transformation' : statsPage }">
           <figure class="avatar">
-            <img src="https://nicotukiainen.com/legacy/images/portrait3.jpg">
+            <img src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948724/legacy/portrait3_qppv5r.jpg">
           </figure>
           <p>As mentioned earlier on the About-page, gaming is a dear hobby for me. Here I have collected some data from some of the games I have played over the years.
+            The games are listed in no particular order and I have only included games I could find a decent API for. This means mostly excluding older games (ActionQuake 2, Diablo 2 et cetera..)
+          </p>
           <hr/>
           <Wow/>
           <DiabloIII/>
+          <Ow/>
           <hr/>
           <a href="#" v-on:click='statsPage = !statsPage'>Click here to get back to "About Nico" -page</a>
         </div>
@@ -42,6 +45,7 @@
 
 <script>
 import Wow from '~/components/games/Wow'
+import Ow from '~/components/games/Ow'
 import DiabloIII from '~/components/games/DiabloIII'
 export default {
   data() {
@@ -62,7 +66,7 @@ export default {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Wow, DiabloIII
+    Wow, DiabloIII, Ow
   }
 }
 </script>

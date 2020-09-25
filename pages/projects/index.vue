@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section">
-      <div class="container">
+      <div class="projects-page">
         <h1 class="title">all projects - click a card for more info</h1>
         <div class="rows is-multiline">
           <div
@@ -40,8 +40,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
+.projects-page {
+  flex: 1;
   padding-top: 14rem;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto 5rem auto;
+  font-size: 1.1rem;
+  text-align: justify;
+  text-justify: inter-word;
+
+  hr {
+    background-color: transparent;
+  }
+
+  //tablets, big phones
+  @media only screen and (min-width: 600px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  // xs-devices, phones
+  @media only screen and (max-width: 600px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 .title {
 color: #f39c12;

@@ -1,6 +1,9 @@
 <template>
     <div style="width:100%;margin-bottom: 4rem;">
-      <p class="game-title">World of Warcraft</p>
+      <!-- <p class="game-title">World of Warcraft</p> -->
+      <div style="text-align:center">
+        <img src="https://worldofwarcraft.com/static/components/Logo/Logo-wow-sitenav.596840db77b4d485a44d65e897e3de57.png" class="gamelogo"/>
+      </div>
       <div style="margin-bottom: 1.5rem;">A list of World of Warcraft characters in my account, accumulated over 12 years of playing. My /played time in total is about 8200 hours, which is roughly 324 days. You can find more info from Armory links provided for each character.</div>
       <div class="columns table-divs">
         <!-- <div class="column headers is-1"><p>Image</p></div> -->
@@ -51,8 +54,8 @@
           <p>{{ character.ilvl }}</p>
           </div>
           <div class="game-data column is-1 has-text-centered">
-            <img v-if="character.faction === 'Horde'" src="https://nicotukiainen.com/legacy//images/horde.png" class="faction-logo"/>
-            <img v-else src="https://nicotukiainen.com/legacy//images/alliance.png" class="faction-logo"/>
+            <img v-if="character.faction === 'Horde'" src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948705/legacy/horde_s2exoa.png" class="faction-logo"/>
+            <img v-else src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948702/legacy/alliance_cjye9k.png" class="faction-logo"/>
           </div>
           <div class="game-data column is-1">
             <p>{{ character.realm }}</p>
@@ -87,7 +90,7 @@ export default {
   },
   methods: {
     getProfileData() {
-      const token = "USJH5YJvhY3CgsutRky4GsnBsVolsuyNqP";
+      const token = "USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq";
       const apiUrl=`https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu&locale=en_GB&access_token=${token}`;      
       return this.$axios.$get(apiUrl)
       .then(response => {
@@ -111,7 +114,7 @@ export default {
       await this.getCharactersAndRealms()
       .then(() => {
         this.charactersAndRealms.forEach(each => {
-          this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=USJH5YJvhY3CgsutRky4GsnBsVolsuyNqP`)         
+          this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq`)         
           .then(res => {
             this.characterResultz.push({
               id: res.id,
@@ -132,7 +135,7 @@ export default {
       })
       // .then(() => {
       //   this.charactersAndRealms.forEach(each => {
-      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=USJH5YJvhY3CgsutRky4GsnBsVolsuyNqP`)
+      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq`)
       //     .then(res => {
       //       console.log(res)
       //       this.characterResultz.forEach(item => {
@@ -157,13 +160,15 @@ export default {
     background: #000;
     color: #f9c61a;
     padding: 0 0.5rem;
-    margin-bottom: 2rem;
     display: inline-block;
     transform-origin: right center;    
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
     letter-spacing: 2px;
     font-weight: bold;
+  }
+  .gamelogo {
+    height: 125px;
   }
   .game-data {
     p {
