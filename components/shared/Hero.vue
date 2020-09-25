@@ -83,6 +83,7 @@ Vue.use(vueSmoothScroll)
     top: 0;
     left: 0;
     background-size: cover !important;
+    background-attachment: fixed !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
