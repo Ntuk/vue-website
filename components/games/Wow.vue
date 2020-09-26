@@ -73,10 +73,17 @@
   <!-- </div> -->
 </template>
 <script>
-import _ from 'lodash';    
+import _ from 'lodash';
+const blizzard = require('blizzard.js').initialize({
+  key: process.env.BLIZZARD_CLIENT_ID,
+  secret: process.env.BLIZZARD_CLIENT_SECRET,
+  origin: 'eu',
+  locale: 'en_GB',
+});
 export default {
   data() {
     return {
+      token: '',
       characterResults: [],
       characterResultz: [],
       charactersAndRealms: [],
@@ -89,8 +96,19 @@ export default {
     }
   },
   methods: {
+    async fetchFreshToken () {
+      try {
+        await blizzard.getApplicationToken()
+          .then(response => {
+            this.token = response.data.access_token;
+          });
+        this.getProfileData();
+      } catch (err) {
+        console.error(err);
+      }
+    },
     getProfileData() {
-      const token = "USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq";
+      const token = this.token;
       const apiUrl=`https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu&locale=en_GB&access_token=${token}`;      
       return this.$axios.$get(apiUrl)
       .then(response => {
@@ -114,7 +132,7 @@ export default {
       await this.getCharactersAndRealms()
       .then(() => {
         this.charactersAndRealms.forEach(each => {
-          this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq`)         
+          this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=USfmDJZAvPWKvUR6fUG2jXuCacFs8v0WJI`)         
           .then(res => {
             this.characterResultz.push({
               id: res.id,
@@ -135,7 +153,7 @@ export default {
       })
       // .then(() => {
       //   this.charactersAndRealms.forEach(each => {
-      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq`)
+      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=USfmDJZAvPWKvUR6fUG2jXuCacFs8v0WJI`)
       //     .then(res => {
       //       console.log(res)
       //       this.characterResultz.forEach(item => {
@@ -149,7 +167,7 @@ export default {
     },
   },
   mounted() {
-    this.getProfileData();
+    this.fetchFreshToken();
     this.getAllCharacters();
   }
 }

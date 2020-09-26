@@ -18,7 +18,7 @@
           <hr/>
           <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
           <hr/>
-          <!-- <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a> -->
+          <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a>
         </div>
       </div>
 

@@ -41,10 +41,17 @@
   <!-- </div> -->
 </template>
 <script>
-import _ from 'lodash';    
+import _ from 'lodash';
+const blizzard = require('blizzard.js').initialize({
+  key: process.env.BLIZZARD_CLIENT_ID,
+  secret: process.env.BLIZZARD_CLIENT_SECRET,
+  origin: 'eu',
+  locale: 'en_GB',
+});
 export default {
   data() {
     return {
+      token: '',
       results: [],
       wideResults: []
     };
@@ -55,18 +62,29 @@ export default {
     }
   },
   methods: {
+    async fetchFreshToken () {
+      try {
+        await blizzard.getApplicationToken()
+          .then(response => {
+            this.token = response.data.access_token;
+          });
+        this.getProfileData();
+      } catch (err) {
+        console.error(err);
+      }
+    },
     getProfileData() {
-      const token = "USIITjQWPDiPnu6c0AEENO1rQyldXOFHgq";
+      const token = this.token;
       const apiUrl=`https://eu.api.blizzard.com/d3/profile/Nightfrost%232688/?locale=en_GB&access_token=${token}`;      
       return this.$axios.$get(apiUrl)
       .then(res => {
         this.wideResults = res;
         this.results = res.heroes.map(c => c);
       })
-    },    
+    },
   },
   mounted() {
-    this.getProfileData();
+    this.fetchFreshToken();
   }
 }
 </script>
