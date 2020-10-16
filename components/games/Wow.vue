@@ -75,15 +75,13 @@
 <script>
 import _ from 'lodash';
 const blizzard = require('blizzard.js').initialize({
-  key: process.env.BLIZZARD_CLIENT_ID,
-  secret: process.env.BLIZZARD_CLIENT_SECRET,
-  origin: 'eu',
-  locale: 'en_GB',
+  key: '228c23d10f6e4cc0bbb49b2d5839d2ce',
+  secret: 'o25cfoSyYPFJp45mId2EdnzgaxGv3yaD',
 });
 export default {
   data() {
     return {
-      token: '',
+      token: null,
       characterResults: [],
       characterResultz: [],
       charactersAndRealms: [],
@@ -96,64 +94,79 @@ export default {
     }
   },
   methods: {
-    async fetchFreshToken () {
+    async fetchFreshToken() {
       try {
         await blizzard.getApplicationToken()
-          .then(response => {
-            this.token = response.data.access_token;
-          });
-        this.getProfileData();
+        .then(response => {
+          this.token = response.data.access_token;
+          console.log('great success! token:', this.token);
+        })
       } catch (err) {
-        console.error(err);
+        console.log('fetchFreshToken()', err);
+      }
+      this.getProfileData();
+    },
+    async getProfileData() {
+      try { 
+        console.log('getProfileData')
+        const token = this.token;
+        const apiUrl=`https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu&locale=en_GB&access_token=${token}`;      
+        return this.$axios.$get(apiUrl)
+        .then(response => {
+          this.characterResults = response.wow_accounts[0].characters.map(c => c);
+          this.getCharactersAndRealms();
+        })
+      } catch (err) {
+        console.log('getProfileData()', err);
       }
     },
-    getProfileData() {
-      const token = this.token;
-      const apiUrl=`https://eu.api.blizzard.com/profile/user/wow?namespace=profile-eu&locale=en_GB&access_token=${token}`;      
-      return this.$axios.$get(apiUrl)
-      .then(response => {
-        this.characterResults = response.wow_accounts[0].characters.map(c => c);
-      })
-    },
     async getCharactersAndRealms() {
-      await this.getProfileData()
-      .then(res => {
-      let characterName = this.characterResults.map(r => r.name);
-      let realmName = this.characterResults.map(r => r.realm.name);
-        for (let i=0 ; i < characterName.length; i++) {
-          this.charactersAndRealms.push({
-            characterName: characterName[i].toLowerCase(),
-            realmName: realmName[i].replace("'", "").toLowerCase()
-          });
-        }
-      })
+      try {
+        console.log('getCharactersAndRealms');
+        let characterName = this.characterResults.map(r => r.name);
+        let realmName = this.characterResults.map(r => r.realm.name);
+          for (let i=0 ; i < characterName.length; i++) {
+            this.charactersAndRealms.push({
+              characterName: characterName[i].toLowerCase(),
+              realmName: realmName[i].replace("'", "").toLowerCase()
+            });
+          }
+      } catch (err) {
+        console.log('getCharactersAndRealms()', err);
+      }
     },
     async getAllCharacters() {
-      await this.getCharactersAndRealms()
-      .then(() => {
-        this.charactersAndRealms.forEach(each => {
-          this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=USfmDJZAvPWKvUR6fUG2jXuCacFs8v0WJI`)         
-          .then(res => {
-            this.characterResultz.push({
-              id: res.id,
-              name: res.name,
-              race: res.race.name,
-              class: res.character_class.name,
-              activeSpec: res.active_spec.name,
-              level: res.level,
-              faction: res.faction.name,
-              realm: res.realm.name,
-              realmSlug: res.realm.slug,
-              ilvl: res.average_item_level,
-              guild: res.guild.name,
-              image: ''
+      try {
+        await this.getCharactersAndRealms()
+        .then(() => {
+          this.charactersAndRealms.forEach(each => {
+            const token = this.token;
+            this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}?namespace=profile-eu&locale=en_GB&access_token=${token}`)         
+            .then(res => {
+              this.characterResultz.push({
+                id: res.id,
+                name: res.name,
+                race: res.race.name,
+                class: res.character_class.name,
+                activeSpec: res.active_spec.name,
+                level: res.level,
+                faction: res.faction.name,
+                realm: res.realm.name,
+                realmSlug: res.realm.slug,
+                ilvl: res.average_item_level,
+                guild: res.guild.name,
+                image: ''
+              })
             })
           })
         })
-      })
+      } catch (err) {
+        console.log(err);
+      }
       // .then(() => {
       //   this.charactersAndRealms.forEach(each => {
-      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=USfmDJZAvPWKvUR6fUG2jXuCacFs8v0WJI`)
+      //     const token = this.token;
+      //     this.$axios.$get(`https://eu.api.blizzard.com/profile/wow/character/${each.realmName}/${each.characterName}/character-media?namespace=profile-eu&locale=en_GB&access_token=${token}`)
       //     .then(res => {
       //       console.log(res)
       //       this.characterResultz.forEach(item => {
@@ -168,7 +181,6 @@ export default {
   },
   mounted() {
     this.fetchFreshToken();
-    this.getAllCharacters();
   }
 }
 </script>

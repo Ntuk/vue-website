@@ -2,38 +2,39 @@
     <div style="width:100%;margin-bottom: 4rem;">
       <!-- <p class="game-title">Diablo III</p> -->
       <div style="text-align:center">
-        <img src="https://bnetproduct-a.akamaihd.net//fff/155c60a0322ae5402f8cbae3c4108297-diablo-III-base-1000x700.png" class="gamelogo"/>
+        <img src="https://quakefans.net/wp-content/uploads/2019/07/diabotical-logo-png-transparent.png" class="gamelogo"/>
       </div>
       <br/>
       <br/>
-      <div style="margin-bottom: 1.5rem;margin-top: -3rem;">List of Diablo III heroes in my account, accumulated since the game launched in 2012. It's been quite quiet lately though.</div>
+      <div style="margin-bottom: 1.5rem;margin-top: -3rem;">Some stats from my account in an AFPS game called Diabotical, released in August 2020.</div>
+      <p style="margin-bottom:1rem;">All modes: </p>
       <div class="columns table-divs">
-        <div class="column headers is-2"><p>Name</p></div>
-        <div class="column headers is-2"><p>Class</p></div>
-        <div class="column headers is-2"><p>Paragon level</p></div>
-        <div class="column headers is-2"><p>Elites killed</p></div>
-        <div class="column headers is-2"><p>Guild</p></div>
-        <div class="column headers is-2"><p>Armory</p></div>
+        <div class="column headers is-2"><p>Matches played</p></div>
+        <div class="column headers is-2"><p>Won</p></div>
+        <div class="column headers is-2"><p>Lost</p></div>
+        <div class="column headers is-2"><p>Frags</p></div>
+        <div class="column headers is-2"><p>Assists</p></div>
+        <div class="column headers is-2"><p>Deaths</p></div>
       </div>
-      <div :key="result.id" v-for="result in orderedResults" style="height:3rem;">
+      <div style="height:3rem;">
         <div class="columns table-divs">
           <div class="game-data column is-2">
-            <p><b>{{ result.name }}</b></p>
+            <p>{{ results.match_count }}</p>
           </div>
           <div class="game-data column is-2">
-            <p>{{ result.class }}</p>
+            <p>{{ results.match_won }}</p>
           </div>
           <div class="game-data column is-2">
-          <p>{{ result.paragonLevel }}</p>
+            <p>{{ results.match_lost }}</p>
           </div>
           <div class="game-data column is-2">
-          <p>{{ result.kills.elites }}</p>
+            <p>{{ results.frags }}</p>
           </div>
           <div class="game-data column is-2">
-            <p>{{ wideResults.guildName }}</p>
+            <p>{{ results.assists }}</p>
           </div>
-          <div class="game-data column is-1">
-            <a target="_blank" :href="'https://eu.diablo3.com/en/profile/Nightfrost-2688/hero/' + result.id">Link</a>
+          <div class="game-data column is-2">
+            <p>{{ results.deaths }}</p>
           </div>
         </div>
       </div>
@@ -42,16 +43,10 @@
 </template>
 <script>
 import _ from 'lodash';
-const blizzard = require('blizzard.js').initialize({
-  key: '228c23d10f6e4cc0bbb49b2d5839d2ce',
-  secret: 'o25cfoSyYPFJp45mId2EdnzgaxGv3yaD',
-});
 export default {
   data() {
     return {
-      token: '',
       results: [],
-      wideResults: []
     };
   },
   computed: {
@@ -60,25 +55,17 @@ export default {
     }
   },
   methods: {
-    async fetchFreshToken () {
-      await blizzard.getApplicationToken()
-      .then(response => {
-        this.token = response.data.access_token;
-      })
-      this.getProfileData();
-    },
     getProfileData() {
-      const token = this.token;
-      const apiUrl=`https://eu.api.blizzard.com/d3/profile/Nightfrost%232688/?locale=en_GB&access_token=${token}`;      
+      const apiUrl=`https://www.diabotical.com/api/v0/users/acd299971bdb4fef90ab5fdb52450262/mainstats?for=alltime`;      
       return this.$axios.$get(apiUrl)
       .then(res => {
-        this.wideResults = res;
-        this.results = res.heroes.map(c => c);
+        console.log(res);
+        this.results = res[0];
       })
     },
   },
   mounted() {
-    this.fetchFreshToken();
+    this.getProfileData();
   }
 }
 </script>

@@ -81,7 +81,7 @@ export default {
       const apiUrl=`https://ow-api.com/v1/stats/pc/eu/Nightfrost-2688/complete`;
       return this.$axios.$get(apiUrl)
       .then(res => {
-        console.log('**res: ', res.competitiveStats.careerStats);
+        // console.log('**res: ', res.competitiveStats.careerStats);
         this.topheroes = res.competitiveStats.topHeroes;
         this.allheroes = res.competitiveStats.careerStats;
         this.awards = res.competitiveStats.awards;

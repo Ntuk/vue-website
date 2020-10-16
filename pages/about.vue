@@ -18,7 +18,7 @@
           <hr/>
           <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
           <hr/>
-          <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a>
+          <!-- <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a> -->
         </div>
       </div>
 
@@ -31,9 +31,10 @@
             The games are listed in no particular order and I have only included games I could find a decent API for. This means mostly excluding older games (ActionQuake 2, Diablo 2 et cetera..)
           </p>
           <hr/>
-          <Wow/>
-          <DiabloIII/>
+          <!-- <Wow/> -->
+          <Diabotical/>
           <Ow/>
+          <DiabloIII/>
           <hr/>
           <a href="#" v-on:click='statsPage = !statsPage'>Click here to get back to "About Nico" -page</a>
         </div>
@@ -47,6 +48,7 @@
 import Wow from '~/components/games/Wow'
 import Ow from '~/components/games/Ow'
 import DiabloIII from '~/components/games/DiabloIII'
+import Diabotical from '~/components/games/Diabotical'
 export default {
   data() {
     return {
@@ -66,7 +68,7 @@ export default {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Wow, DiabloIII, Ow
+    Wow, DiabloIII, Ow, Diabotical
   }
 }
 </script>
