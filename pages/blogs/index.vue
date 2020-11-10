@@ -148,7 +148,7 @@ export default {
   max-width: 1400px;
   margin: 0 auto 5rem auto;
   font-size: 1.1rem;
-  text-align: justify;
+  // text-align: justify;
   text-justify: inter-word;
 
   hr {
