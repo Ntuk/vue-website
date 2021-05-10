@@ -166,10 +166,13 @@ a {
   font-weight: bold;
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
+.section {
+  padding: 0;
+}
 #f-projects {
   position: relative;
-  padding: 5rem 0;
-  margin: -5rem;
+  padding-bottom: 5rem;
+  margin-bottom: -5rem;
   background:
     linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
     radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
@@ -177,7 +180,7 @@ a {
 }
 #f-ramblings {
   top: -17rem;
-  padding: 5rem 0;
+  padding-top: 5rem;
   background: radial-gradient(circle, rgb(129, 129, 167) 0%, rgba(151,151,193,1) 100%);
   background:
     linear-gradient(to top left, rgb(129, 129, 167) 15%, transparent),
@@ -186,6 +189,7 @@ a {
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 #f-footer {
+  padding-top: 5rem;
   background:
     linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
     radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
