@@ -46,7 +46,7 @@ Vue.use(vueSmoothScroll)
 <style scoped lang="scss">
   .hero {
     width: 100vw;
-    // height: 50vh;
+    height: calc(100vh+6rem);
     display: flex;
     justify-content: center;
   }
