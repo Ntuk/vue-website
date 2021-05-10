@@ -168,17 +168,16 @@ a {
 }
 #f-projects {
   position: relative;
-  top: 3rem;
-  padding: 10rem 0;
+  padding: 5rem 0;
+  margin: -5rem;
   background:
     linear-gradient(to bottom right, rgba(70,104,138,1) 15%, transparent),
     radial-gradient(circle at 100% 0%, rgba(70,104,138,1) 0%, transparent 20%) center center / 15px 15px,
     linear-gradient(to bottom right, rgba(52,73,94,1), rgba(52,73,94,1));
-  clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 #f-ramblings {
-  top: -14rem;
-  padding: 10rem 0;
+  top: -17rem;
+  padding: 5rem 0;
   background: radial-gradient(circle, rgb(129, 129, 167) 0%, rgba(151,151,193,1) 100%);
   background:
     linear-gradient(to top left, rgb(129, 129, 167) 15%, transparent),

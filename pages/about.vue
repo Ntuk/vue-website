@@ -8,17 +8,14 @@
           <figure class="avatar">
             <img src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948724/legacy/portrait2_o3qkvu.jpg">
           </figure>
-          <p>Hello! My name is Nico Tukiainen. I am a Finnish Software Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a target="_blank" href="https://www.pagero.com/">pagero.com</a>.
+          <p>Hello! My name is Nico Tukiainen. I am a Finnish Systems Developer and I work for a Swedish company called Pagero. At Pagero we help companies streamline and digitalise their business processes and we aim to become the largest network between businesses worldwide. Learn more at <a target="_blank" href="https://www.pagero.com/">pagero.com</a>.
+          I have Bachelors Degree in Business Information Technology from Haaga-Helia University of Applied Sciences.
           <hr/>
           <p>I have only been working in the IT since October 2018 and before that I worked in the restaurant industry for 13 years. I am still quite novice but I'm lucky enough to be working with a team of very skilled and helpful Developers / Engineers. 
           Throughout my life, I have acquired advanced technical knowledge and that has helped me adapt to these new challenges.
-          That being said, I am also an avid PC gamer. My favorite games of all time include such as Quake 2 (especially ActionQuake 2 -mod), Diablo series, World of Warcraft, Overwatch.</p>
+          That being said, I am also an avid <a href="#" v-on:click='statsPage = !statsPage'>PC gamer</a>. My favorite games of all time include such as Quake 2 (especially ActionQuake 2 -mod), Diablo series, World of Warcraft, Overwatch.</p>
           <hr/>
           <p>I also get excited about things easily, especially about technology. My long-term interests include programming, web design, 3d modeling, user experience, good food, martial arts, travelling, music and aforementioned PC gaming. I also enjoy an occasional craft beer or two every now and then.</p>
-          <hr/>
-          <p>I am currently writing my Thesis on Business IT in Haaga-Helia University of Applied Sciences about development and deployment of a Web component library for a case company.</p>
-          <hr/>
-          <!-- <a href="#" v-on:click='statsPage = !statsPage'>Click here to see my gaming stats</a> -->
         </div>
       </div>
 
@@ -27,16 +24,16 @@
           <figure class="avatar">
             <img src="https://res.cloudinary.com/dezjnxeig/image/upload/v1600948724/legacy/portrait3_qppv5r.jpg">
           </figure>
-          <p>As mentioned earlier on the About-page, gaming is a dear hobby for me. Here I have collected some data from some of the games I have played over the years.
+          <p>As mentioned on the About-page, gaming is a dear hobby for me. Here I have collected some data from some of the games I have played over the years.
             The games are listed in no particular order and I have only included games I could find a decent API for. This means mostly excluding older games (ActionQuake 2, Diablo 2 et cetera..)
           </p>
           <hr/>
-          <!-- <Wow/> -->
-          <Diabotical/>
-          <Ow/>
-          <DiabloIII/>
+          <WowIo/>
+          <!-- <Diabotical/>
+          <Ow/> -->
+          <!-- <DiabloIII/> -->
           <hr/>
-          <a href="#" v-on:click='statsPage = !statsPage'>Click here to get back to "About Nico" -page</a>
+          <a href="#" v-on:click='statsPage = !statsPage'>Back to "About Nico" -page</a>
         </div>
       </div>
 
@@ -45,7 +42,7 @@
 </template>
 
 <script>
-import Wow from '~/components/games/Wow'
+import WowIo from '~/components/games/WowIo'
 import Ow from '~/components/games/Ow'
 import DiabloIII from '~/components/games/DiabloIII'
 import Diabotical from '~/components/games/Diabotical'
@@ -68,7 +65,7 @@ export default {
     title: 'Learn more about Nico Tukiainen | Nico Tukiainen'
   },
   components: {
-    Wow, DiabloIII, Ow, Diabotical
+    WowIo, DiabloIII, Ow, Diabotical
   }
 }
 </script>

@@ -34,7 +34,7 @@ Vue.use(vueSmoothScroll)
       },
       image: {
         type: String,
-        default: 'https://images.pexels.com/photos/167259/pexels-photo-167259.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        default: 'https://csengineermag.com/wp-content/uploads/2020/04/AdobeStock_317396428.jpeg'
       },
       promoLink: {
         type: String,
@@ -46,7 +46,7 @@ Vue.use(vueSmoothScroll)
 <style scoped lang="scss">
   .hero {
     width: 100vw;
-    height: 50vh;
+    // height: 50vh;
     display: flex;
     justify-content: center;
   }
